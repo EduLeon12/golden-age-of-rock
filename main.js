@@ -17,7 +17,7 @@ function ShoppingCart() {
     this.removeOne = function(id) {
         if (cart[id] && cart[id] >= 1) {
             cart[id] -= 1;
-            console.log("Producto con id:", id, "removido del carrito con un total de", cart[id], "restantes");
+            console.log("Producto con id:", id, "removido del carrito con un total de", cart[id], "restantes de este producto");
         }
         return cart[id];
     }
