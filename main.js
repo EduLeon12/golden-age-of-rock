@@ -1,26 +1,35 @@
+// @ts-check
 // SHOPPING CART
 function ShoppingCart() {
-    var cart = [];
+    // { id: numero de discos en el carrito }
+    let cart = {};
 
-    this.add = function(product) {
-        cart.push(product);
+    this.add = function(id) {
+        if (cart[id])
+            cart[id] += 1;
+        else
+            cart[id] = 1;
+      console.log("Agregado al carrish");
     }
+
     this.remove = function(id) {
-        cart = cart.filter(function(currentProduct){
-            return currentProduct.id === id
-        })
+        if (cart[id] && cart[id] >= 1)
+            cart[id] -= 1;
+        console.log("Removido del carrish");
     }
 
     this.get = function(){
         return cart;
     }
+
     this.getTotalAmount = function(){
-        var total = 0;
-        return total;
-        cart.forEach(function(currentProduct){
+        let total = 0;
+        cart.forEach(currentProduct => {
             total += currentProduct.price
         })
+        return total;
     }
+
 }
 
 function Product(id, name, price) {
@@ -31,34 +40,8 @@ function Product(id, name, price) {
 
 var myShoppingCart = new ShoppingCart();
 
-function Catalogo() {
-    var products = [
-        new Product(1,"metallica", 10),
-        new Product(2, "pinkfloyd", 10),
-        new Product(3,"gunsnroses", 10),
-        new Product(4, "beatles", 10),
-        new Product(5,"rollingstones", 10),
-        new Product(6, "ledzepellin", 10),
-        new Product(7,"queen", 10),
-        new Product(8, "pearljam", 10),
-    ]
-
-    this.get = function(){
-        return products;
-    }
-    this.getById = function(id) {
-        var product = null;
-        products.forEach(function(currentProduct){
-            if(currentProduct, id === id){
-                product = currentProduct;
-            }
-        })
-        return product;
-    }
-}
-
-
 // CONVERTIDOR
+const DOLLARPRICE = 1;
 var converToPesos = amount => (amount * DOLLARPRICE);
 
 function calculateTaxes (amount, tax) {
@@ -76,4 +59,44 @@ function calculateTaxes (amount, tax) {
     }
     return amountTax;
 }
+
 var localPrice = converToPesos();
+
+const catalogoEl = document.getElementById('catalogo');
+
+db.get().forEach(item => {
+    const productoEl = document.createElement("div");
+    productoEl.className = "w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col";
+
+    // image
+    const discEl = document.createElement("img");
+    discEl.src = item.src;
+    
+    // title
+    const titleEl = document.createElement("div");
+    titleEl.className = "flex justify-between items-center py-2";
+
+    const nameEl = document.createElement("span");
+    nameEl.textContent = item.name;
+
+    // Add 
+    const addButtonEl = document.createElement("button");
+    addButtonEl.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/>
+        </svg>
+    `
+
+    titleEl.appendChild(nameEl);
+    titleEl.appendChild(addButtonEl);
+
+    // precio
+    const priceEl = document.createElement("span");
+    priceEl.textContent = "$" + item.price.toFixed(2);
+
+    productoEl.appendChild(discEl);
+    productoEl.appendChild(titleEl);
+    productoEl.appendChild(priceEl);
+
+    catalogoEl.appendChild(productoEl);
+})

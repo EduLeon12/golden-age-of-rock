@@ -10,9 +10,8 @@
     <meta name="keywords" content="tailwind,tailwindcss,tailwind css,css,starter template,free template,store template, shop layout, minimal, monochrome, minimalistic, theme, nordic">
     <link href="css.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
-
-    
-
+    <script defer src="db.js"></script>
+    <script defer src="main.js"></script>
 </head>
 
 <body class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
@@ -52,15 +51,7 @@
     </nav>
 
     <section class="w-full mx-auto bg-nordic-gray-light flex pt-12 md:pt-0 md:items-center bg-cover bg-right" style="max-width:1600px; height: 32rem; background-image: url('images/bg.jpg');">
-
-      <div class="container mx-auto">
-
-
-
-	  </div>
-
     </section>
-
     <section class="bg-white py-8">
 
         <div class="container py-8 px-6 mx-auto">
@@ -76,124 +67,18 @@
     </section>
 
     <section class="bg-white py-8">
-
-        <div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
-
-            <nav id="store" class="w-full z-30 top-0 px-6 py-1">
-                <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
-
-                    <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="#">
-				Store
-			</a>
-
-                   
-              </div>
-            </nav>
-
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
-                <a href="#">
-                    <img class="hover:grow hover:shadow-lg" src=images/metallica.jpg>
-                    <div class="pt-3 flex items-center justify-between">
-                        <p class="">Metallica</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/></svg>
-                    </div>
-                    <p class="pt-1 text-gray-900">10.00$</p>
-                </a>
-            </div>
-
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
-                <a href="#">
-                    <img class="hover:grow hover:shadow-lg" src=images/pink.jpg>
-                    <div class="pt-3 flex items-center justify-between">
-                        <p class="">Pink Floyd</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/></svg>
-                    </div>
-                    <p class="pt-1 text-gray-900">10.00$</p>
-                </a>
-            </div>
-
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
-                <a href="#">
-                    <img class="hover:grow hover:shadow-lg" src=images/guns.jpg>
-                    <div class="pt-3 flex items-center justify-between">
-                        <p class="">Guns N' Roses</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/></svg>
-                    </div>
-                    <p class="pt-1 text-gray-900">10.00$</p>
-                </a>
-            </div>
-
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
-                <a href="#">
-                    <img class="hover:grow hover:shadow-lg" src=images/beatles.jpg>
-                    <div class="pt-3 flex items-center justify-between">
-                        <p class="">The Beatles</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/></svg>
-                    </div>
-                    <p class="pt-1 text-gray-900">10.00$</p>
-                </a>
-            </div>
-
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
-                <a href="#">
-                    <img class="hover:grow hover:shadow-lg" src=images/rolling.jpg>
-                    <div class="pt-3 flex items-center justify-between">
-                        <p class="">Rolling Stones</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/></svg>
-                    </div>
-                    <p class="pt-1 text-gray-900">10.00$</p>
-                </a>
-            </div>
-
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
-                <a href="#">
-                    <img class="hover:grow hover:shadow-lg" src=images/led.jpg>
-                    <div class="pt-3 flex items-center justify-between">
-                        <p class="">Led Zepellin</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/></svg>
-                    </div>
-                    <p class="pt-1 text-gray-900">10.00$</p>
-                </a>
-            </div>
-
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
-                <a href="#">
-                    <img class="hover:grow hover:shadow-lg" src=images/queen.jpg>
-                    <div class="pt-3 flex items-center justify-between">
-                        <p class="">Queen</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/></svg>
-                    </div>
-                    <p class="pt-1 text-gray-900">10.00$</p>
-                </a>
-            </div>
-
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
-                <a href="#">
-                    <img class="hover:grow hover:shadow-lg" src=images/pearl.jpg>
-                    <div class="pt-3 flex items-center justify-between">
-                        <p class=""> Pearl Jam</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/></svg>    
-                    </div>
-                    <p class="pt-1 text-gray-900">10.00$</p>
-                </a>
-            </div>
-
-            </div>
+        <h1 id="store" class="w-full z-30 top-0 px-6 py-1  font-semibold text-4xl color-black">
+            Store   
+        </h1>
+        <div id="catalogo" class="container mx-auto flex items-center flex-wrap pt-4 pb-12" >
+            <!-- Donde colocaremos DE NUEVO el js htmlsistico -->
+        </div>
 
     </section>
 
 
     <footer class="container mx-auto bg-white py-8 border-t border-gray-400">
-        <div class="container flex px-3 py-8 ">
-            <div class="w-full mx-auto flex flex-wrap">
-                <div class="flex w-full lg:w-1/2 ">
-                    <div class="px-3 md:px-0">
-                        <h3 class="font-bold text-gray-900">© Company 2020</h3>
-
-                    </div>
-                </div>
-            </div>
-        </div>
+      <h3 class="font-bold text-gray-900">© Company 2020</h3>
     </footer>
 
 </body>

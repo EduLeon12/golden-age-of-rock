@@ -59,4 +59,4 @@ function Db() {
     }
 }
 
-const db = new Db();
+var db = new Db();
