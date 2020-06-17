@@ -83,6 +83,9 @@ db.get().forEach(item => {
     const nameEl = document.createElement("span");
     nameEl.textContent = item.name;
 
+    const cartControlsEl = document.createElement("div");
+    cartControlsEl.className = "flex items-center justify-center";
+
     // Add 
     const addButtonEl = document.createElement("button");
     // total
@@ -123,10 +126,13 @@ db.get().forEach(item => {
         }
     });
 
+    cartControlsEl.appendChild(removeButtonEl);
+    cartControlsEl.appendChild(totalEl);
+    cartControlsEl.appendChild(addButtonEl);
+
     titleEl.appendChild(nameEl);
-    titleEl.appendChild(removeButtonEl);
-    titleEl.appendChild(totalEl);
-    titleEl.appendChild(addButtonEl);
+    titleEl.appendChild(cartControlsEl);
+
 
     // precio
     const priceEl = document.createElement("span");
