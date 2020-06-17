@@ -4,18 +4,22 @@ function ShoppingCart() {
     // { id: numero de discos en el carrito }
     let cart = {};
 
-    this.add = function(id) {
+    this.addOne = function(id) {
         if (cart[id])
             cart[id] += 1;
         else
             cart[id] = 1;
-      console.log("Agregado al carrish");
+        
+        console.log("Producto con id:", id, ". Tienes un total de: ", cart[id], "de estos productos en el carrito");
+        return cart[id];
     }
 
-    this.remove = function(id) {
-        if (cart[id] && cart[id] >= 1)
+    this.removeOne = function(id) {
+        if (cart[id] && cart[id] >= 1) {
             cart[id] -= 1;
-        console.log("Removido del carrish");
+            console.log("Producto con id:", id, "removido del carrito con un total de", cart[id], "restantes");
+        }
+        return cart[id];
     }
 
     this.get = function(){
@@ -81,13 +85,47 @@ db.get().forEach(item => {
 
     // Add 
     const addButtonEl = document.createElement("button");
+    // total
+    const totalEl = document.createElement("span");
+    totalEl.id = "total-" + item.id;
+    totalEl.textContent = "0";
+    totalEl.className = "hidden";
+
+    // remove
+    const removeButtonEl = document.createElement("button");
+    removeButtonEl.className = "hidden";
+
     addButtonEl.innerHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="fill-current text-yellow-900">
             <path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/>
         </svg>
     `
+    addButtonEl.addEventListener('click', () => {
+        const newTotal = myShoppingCart.addOne(item.id);
+        totalEl.textContent = newTotal;
+        if (newTotal === 1) {
+            totalEl.className = "visible px-2";
+            removeButtonEl.className = "visible";
+        }
+    });
+
+    removeButtonEl.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="fill-current text-red-900" style="transform: rotate(45deg);">
+            <path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/>
+        </svg>
+    `
+    removeButtonEl.addEventListener('click', () => {
+        const newTotal = myShoppingCart.removeOne(item.id);
+        totalEl.textContent = newTotal;
+        if (newTotal === 0) {
+            totalEl.className = "hidden";
+            removeButtonEl.className = "hidden";
+        }
+    });
 
     titleEl.appendChild(nameEl);
+    titleEl.appendChild(removeButtonEl);
+    titleEl.appendChild(totalEl);
     titleEl.appendChild(addButtonEl);
 
     // precio
