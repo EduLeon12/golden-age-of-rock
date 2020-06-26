@@ -1,0 +1,22 @@
+.records {
+    height: 270px;
+    width: 270px;
+  }
+
+  .records:hover {
+    animation-name: spin;
+    animation-duration: 4000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    border-radius: 50%;
+
+  }
+
+  @keyframes spin {
+    0% { 
+        transform: rotate(0deg);
+    }
+    100% { 
+        transform: rotate(360deg);
+    }
+}
