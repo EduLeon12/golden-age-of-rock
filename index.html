@@ -11,8 +11,12 @@
     <link href="css.css" rel="stylesheet">
     <link href="animations.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script defer src="db.js"></script>
     <script defer src="main.js"></script>
+    <script defer src="jquerry.js"></script>
+  
+
 </head>
 
 <body class="bg-gray-900 text-gray-600 work-sans leading-normal text-base tracking-normal">
@@ -39,7 +43,7 @@
                     </svg>
                 </a>
 
-                <a class="pl-3 inline-block no-underline hover:text-white" href="#">
+                <a id="viewCart" class="pl-3 inline-block no-underline hover:text-white"  href="#">
                     <svg class="fill-current hover:text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <path d="M21,7H7.462L5.91,3.586C5.748,3.229,5.392,3,5,3H2v2h2.356L9.09,15.414C9.252,15.771,9.608,16,10,16h8 c0.4,0,0.762-0.238,0.919-0.606l3-7c0.133-0.309,0.101-0.663-0.084-0.944C21.649,7.169,21.336,7,21,7z M17.341,14h-6.697L8.371,9 h11.112L17.341,14z" />
                         <circle cx="10.5" cy="18.5" r="1.5" />
@@ -51,35 +55,64 @@
         </div>
     </nav>
 
-    <section class="w-full mx-auto bg-gray-900  flex pt-12 md:pt-0 md:items-center bg-cover bg-right" style="max-width:1600px; height: 32rem; background-image: url('images/bg.jpg');">
+     <!-- Shopping Cart -->
+    <div id="myCart" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" id="closeCart"  >&times;</a>
+    <div class="overlay-content">
+    <ul>
+        <li id="miniCart">
+            Discos de carrito + Qtt + Price 
+        </li>
+        <br>
+        <br> 
+        <li  class="text-3x1" >
+           <a href="" id="checkout"> Go to checkout  </a>
+        </li>
+    </ul>
+    </div>
+    </div>
+
+    <section class=" w-full mx-auto bg-gray-900  flex pt-12 md:pt-0 md:items-center bg-cover bg-right" style="max-width:1600px; height: 32rem; background-image: url('images/bg.jpg');">
     </section>
-    <section class="bg-gray-900  py-8">
+    <section id="intro"  class="invisible bg-gray-900 ">
 
-        <div class="container py-8 px-6 mx-auto">
+        <div id="introA" >
 
-            <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-white text-xl mb-8" href="#">
+            <a id="introB"  href="#">
                 Welcome Back 
 		</a>
 
-            <p class="mt-8 mb-8"> We want to bring back to bring back old memories of the best time of rock with a variety of singles 
+            <p id="introC"> We want to bring back to bring back old memories of the best time of rock with a variety of singles 
                 so just sit back, relax, PUT YOUR HEADPHONES ON and remember the Golden age of Rock.
         </div>
 
     </section>
 
     <section class="bg-gray-900  py-8">
-        <h1 id="store" class="w-full z-30 top-0 px-6 py-1 items-center font-semibold text-4xl color-black">
-            Store   
+        <h1 id="store" class="w-full z-30 top-0 px-10 py-1 items-center font-semibold text-4xl color-black">
+            Store     
         </h1>
         <div id="catalogo" class="container catalogo mx-auto flex items-center flex-wrap pt-4 pb-12" >
             <!-- Donde colocaremos el catalogo por JS -->
         </div>
+    
+        <h4 id="viewcartText"  class=" invisible w-full z-30 top-0 px-10 py-1 items-center font-semibold text-2xl color-black "  >
+            View Cart    
+        </h4>
 
     </section>
 
     <footer class="container mx-auto bg-gray-900  py-8 border-t border-gray-400">
-      <h3 class="font-bold text-gray-600">© Company 2020</h3>
+
+                <h3 id="Test" class="font-bold text-gray-600">© Company 2020</h3>
+                 <h3 class="font-bold text-gray-600" id= "about"   >
+                     <a href="#intro">Our mission </a>
+                 </h3>  
     </footer>
+
+
+
+ 
 </body>
 
 </html>
