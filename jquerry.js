@@ -24,3 +24,4 @@ $("#viewcartText").click(function openCart(){
 $("#checkout").click(function() {
      alert("quieres ver el carrito");
 });
+
