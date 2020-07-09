@@ -21,7 +21,11 @@ $("#viewcartText").click(function openCart(){
     document.getElementById("myCart").style.width = "100%";
 });
 
-$("#checkout").click(function() {
-     alert("quieres ver el carrito");
+$("#loginbtn").click(function openLogin(){
+    document.getElementById("login").style.width = "100%";
+});
+
+$("#closeLogin").click(function closeLogin() {
+    document.getElementById("login").style.width = "0%";
 });
 

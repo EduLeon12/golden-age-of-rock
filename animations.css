@@ -43,7 +43,7 @@
   margin-top: 30px;
 }
 
-.overlay ul {
+.overlay ul form {
   padding: 8px;
   text-decoration: none;
   font-size: 36px;
@@ -52,7 +52,7 @@
   transition: 0.3s; 
 }
 
-.overlay ul:hover, .overlay ul:focus {
+.overlay ul form:hover, .overlay ul form:focus {
   color: #f1f1f1;
 }
 
@@ -64,7 +64,7 @@
 }
 
 @media screen and (max-height: 450px) {
-  .overlay ul {font-size: 20px}
+  .overlay ul form {font-size: 20px}
   .overlay .closebtn {
     font-size: 40px;
     top: 15px;
