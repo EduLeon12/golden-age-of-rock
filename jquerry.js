@@ -29,3 +29,15 @@ $("#closeLogin").click(function closeLogin() {
     document.getElementById("login").style.width = "0%";
 });
 
+$("#closeLogIn").click(function closeLogin() {
+    document.getElementById("login").style.width = "0%";
+});
+
+$("#signUpBtn").click(function openSignUpForm(){
+    document.getElementById("login").style.width = "0%"
+    document.getElementById("signUpForm").style.height = "100%";
+});
+
+
+
+
