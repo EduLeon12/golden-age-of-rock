@@ -32,6 +32,8 @@
   background-color: rgba(0,0,0, 0.9);
   overflow-x: hidden; 
   transition: 0.5s; 
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .overlaytop {
@@ -45,14 +47,18 @@
   background-color: rgba(0,0,0, 0.9);
   overflow-x: hidden; 
   transition: 0.8s; 
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .overlay-content {
-  position: relative;
+  position: absolute;
   top: 25%;
   width: 100%; 
   text-align: center; 
   margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .overlay ul form {
@@ -61,11 +67,14 @@
   font-size: 36px;
   color: #818181;
   display: block; 
-  transition: 0.3s; 
+  transition: 0.3s;
+  margin-left: auto;
+  margin-right: auto; 
 }
 
 .overlay ul form:hover, .overlay ul form:focus {
   color: #f1f1f1;
+  
 }
 
 .overlay .closebtn {
@@ -83,5 +92,3 @@
     right: 35px;
   }
 }
-
-
