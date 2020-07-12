@@ -43,29 +43,21 @@ $("#checkout").click(function openCheckout(){
     document.getElementById("checkoutForm").style.height= "100%";
 });
 
-$("#closeCheckout").click(function closeCheckout(){
+$("#confirmPurchase").click(function closeCheckout(){
     document.getElementById("checkoutForm").style.height= "0%";
 });
 
-$("#").click(function openSignUpForm(){
-    document.getElementById("login").style.width = "0%"
-    document.getElementById("signUpForm").style.height = "100%";
+
+$("#createAccount").click(function closeSignUpForm() {
+    document.getElementById("signUpForm").style.height = "0%";
 });
 
-$(function() {
-    $( "#button" ).click(function() {
-      $( "#button" ).addClass( "onclic", 250, validate);
-    });
-  
-    function validate() {
-      setTimeout(function() {
-        $( "#button" ).removeClass( "onclic" );
-        $( "#button" ).addClass( "validate", 450, callback );
-      }, 2250 );
+
+$("#seePassword").click(function showPassword(){
+    if ($("#seePassword").is(":checked")){
+    ($("#signUpPassword").prop('type','text'))
+    }  else {
+    ($("#signUpPassword").prop('type','password'))
     }
-      function callback() {
-        setTimeout(function() {
-          $( "#button" ).removeClass( "validate" );
-        }, 1250 );
-      }
-    });
+});
+
