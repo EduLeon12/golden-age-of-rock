@@ -1,83 +1,83 @@
 
 [
     {
-        "Titulo": "Smells Like Teen Spirit",
-        "Artista": "Nirvana"
+        "title": "Smells Like Teen Spirit",
+        "artist": "Nirvana"
     },
     {
-        "Titulo": "Imagine",
-        "Artista": "John Lennon"
+        "title": "Imagine",
+        "artist": "John Lennon"
     },
     {
-        "Titulo": "One",
-        "Artista": "U2"
+        "title": "One",
+        "artist": "U2"
     },
     {
-        "Titulo": "Bille Jean",
-        "Artista": "Michael Jackson"
+        "title": "Bille Jean",
+        "artist": "Michael Jackson"
     },
     {
-        "Titulo": "Bohemian Rhapsody",
-        "Artista": "Queen"
+        "title": "Bohemian Rhapsody",
+        "artist": "Queen"
     },
     {
-        "Titulo": "Hey Jude",
-        "Artista": "The Beatles"
+        "title": "Hey Jude",
+        "artist": "The Beatles"
     },
     {
-        "Titulo": "Like A Rolling Stone",
-        "Artista": "Bob Dylan"
+        "title": "Like A Rolling Stone",
+        "artist": "Bob Dylan"
     },
     {
-        "Titulo": "I Can't Get No Satisfaction",
-        "Artista": "Rolling Stones"
+        "title": "I Can't Get No Satisfaction",
+        "artist": "Rolling Stones"
     },
     {
-        "Titulo": "God Save The Queen",
-        "Artista": "Sex Pistols"
+        "title": "God Save The Queen",
+        "artist": "Sex Pistols"
     },
     {
-        "Titulo": "London Calling",
-        "Artista": "The Clash"
+        "title": "London Calling",
+        "artist": "The Clash"
     },
     {
-        "Titulo": "Sweet Child O'Mine",
-        "Artista": "Guns N'Roses"
+        "title": "Sweet Child O'Mine",
+        "artist": "Guns N'Roses"
     },
     {
-        "Titulo": "Waterloo Sunset",
-        "Artista": "THe Kinks"
+        "title": "Waterloo Sunset",
+        "artist": "THe Kinks"
     },
     {
-        "Titulo": "Hotel California",
-        "Artista": "The Eagles"
+        "title": "Hotel California",
+        "artist": "The Eagles"
     },
     {
-        "Titulo": "Your Song",
-        "Artista": "Elton John"
+        "title": "Your Song",
+        "artist": "Elton John"
     },
     {
-        "Titulo": "Stairway To Heaven",
-        "Artista": "Led Zeppelin"
+        "title": "Stairway To Heaven",
+        "artist": "Led Zeppelin"
     },
     {
-        "Titulo": "The Twist",
-        "Artista": "Chubby Checker"
+        "title": "The Twist",
+        "artist": "Chubby Checker"
     },
     {
-        "Titulo": "Live Forever",
-        "Artista": "Oasis"
+        "title": "Live Forever",
+        "artist": "Oasis"
     },
     {
-        "Titulo": "Life On Mars?",
-        "Artista": "David Bowie"
+        "title": "Life On Mars?",
+        "artist": "David Bowie"
     },
     {
-        "Titulo": "Heartbreak Hotel",
-        "Artista": "Elvis Presley"
+        "title": "Heartbreak Hotel",
+        "artist": "Elvis Presley"
     },
     {
-        "Titulo": "Born To Run",
-        "Artista": "Bruce Springsteen"
+        "title": "Born To Run",
+        "artist": "Bruce Springsteen"
     }
 ]

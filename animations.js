@@ -61,12 +61,62 @@ $("#seePassword").click(function showPassword(){
     }
 });
 
+
+
 $("#viewtop20List").click(function opentop20List(){
     document.getElementById("top20List").style.height = "100%";
+        $.ajax({
+         url: "golden-age-of-rock/top20.json", //un archivo json con datos de usuarios: nombre, apellido, etc
+         dataType: "json",
+         success: function(response) {
+           $.each(response.title, function(item) {
+             alert(item.artist); 
+           });
+         }
+        });
+       
+       });
+       
+
+
+
+   /* document.querySelector('#viewtop20List').addEventListener("click",getList);
     function getList(){
-        console.log("dentro de la fincion")
+        const xhttp = new XMLHttpRequest();
+    
+        xhttp.open("GET", "top20.json", true);
+    
+        xhttp.send();
+    
+        xhttp.onreadystatechange = function(){
+    
+            if(this.readyState == 4 && this.status == 200){
+    
+                let list = JSON.parse(this.responseText);
+                 // console.log(this.responseText);
+                
+                let songs = document.querySelector("#topSongs");
+                songs.innerHTML = "";
+    
+                for(let item of list){
+                    songs.innerHTML += `
+                    <tr>
+                       <td>$(item.titulo)</td>
+                       <td>$(item.artista)</td>
+                    </tr>
+                    `
+                }
+    
+            }
+        }
+    
     }
 });
+*/
+
+
+
+
 
 $("#closetop20List").click(function opentop20List(){
     document.getElementById("top20List").style.height = "0%";
