@@ -61,3 +61,16 @@ $("#seePassword").click(function showPassword(){
     }
 });
 
+$("#viewtop20List").click(function opentop20List(){
+    document.getElementById("top20List").style.height = "100%";
+    function getList(){
+        console.log("dentro de la fincion")
+    }
+});
+
+$("#closetop20List").click(function opentop20List(){
+    document.getElementById("top20List").style.height = "0%";
+});
+
+
+

@@ -18,6 +18,8 @@
     <script defer src="checkout.js"></script>
     <script defer src="catalog.js"></script>
     <script defer src="animations.js"></script>
+    <script defer src="ajax.js"></script>
+    <script defer src="top20.json"></script>
   
 
 </head>
@@ -71,6 +73,24 @@
      </div>
     </div>
     </div>
+
+
+         <!-- Top 20 List -->
+         <div id="top20List" class="overlaytop">
+          <a href="javascript:void(0)" class="closebtn" id="closetop20List"  >&times;</a>
+          <div class="overlay-content">
+         
+          <table>
+            <thead>
+              <tr>
+                <th>Titulo</th>
+                <th>Artista</th>
+              </tr>
+            </thead>
+          </table>       
+          
+          </div>
+          </div>
 
      <!-- Login -->
     <div id="login" class=" overlay ">
@@ -264,7 +284,11 @@
             View Cart    
         </h4>
 
+        <h4 id="viewtop20List"  class=" w-full z-30 top-0 px-10 py-1 items-center font-semibold text-2xl color-black "  >
+          List of top 20 Songs of all time
+        </h4>
     </section>
+
 
     <footer class="container mx-auto bg-gray-900  py-8 border-t border-gray-400">
 
