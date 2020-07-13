@@ -85,8 +85,8 @@ $("#viewtop20List").click(function opentop20List(){
                 for(let item of list){
                     songs.innerHTML += `
                     <tr>
-                       <td>$(item.titulo)</td>
-                       <td>$(item.artista)</td>
+                       <td>$(item.title)</td>
+                       <td>$(item.artist)</td>
                     </tr>
                     `
                 }    
