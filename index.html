@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Age of Rock</title>
-    <meta name="description" content="Free open source Tailwind CSS Store template">
+    <meta name="description" content="">
     <meta name="keywords" content="tailwind,tailwindcss,tailwind css,css,starter template,free template,store template, shop layout, minimal, monochrome, minimalistic, theme, nordic">
     <link href="css.css" rel="stylesheet">
     <link href="animations.css" rel="stylesheet">
@@ -18,7 +18,6 @@
     <script defer src="checkout.js"></script>
     <script defer src="catalog.js"></script>
     <script defer src="animations.js"></script>
-    <script defer src="ajax.js"></script>
     <script defer src="top20.json"></script>
   
 
@@ -80,7 +79,7 @@
           <a href="javascript:void(0)" class="closebtn" id="closetop20List"  >&times;</a>
           <div class="overlay-content">
          
-          <table>
+          <table class="w-full" >
             <thead>
               <tr>
                 <th>Titulo</th>
@@ -88,7 +87,7 @@
               </tr>
             </thead>
             <tbody id="topSongs">
-              
+
             </tbody>
           </table>       
           
@@ -245,12 +244,10 @@
                   </div>
                 </div>
                 <div class="w-full">
-
                     <div class="w-full">
                         <button id="confirmPurchase" class="shadow bg-gray-600 hover:bg-gray-900 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
                          Confirm Purchase
-                        </button> 
-                    
+                        </button>                    
                     </div>
                  </div>
                 </div>              
@@ -289,8 +286,8 @@
         </h4>
 
         <h4 id=""  class=" w-full z-30 top-0 px-10 py-1 items-center font-semibold text-2xl color-black "  >
-          You can check out the list of the 20 best songs of all time.
-          <button id="viewtop20List" class="  shadow bg-gray-600 hover:bg-gray-900 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button" >
+          You can check out the list of the 20 best songs of all time
+          <button id="viewtop20List" class="  shadow bg-gray-600 hover:bg-gray-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button" >
             View List
            </button>
         </h4>

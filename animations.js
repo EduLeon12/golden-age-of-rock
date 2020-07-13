@@ -65,22 +65,6 @@ $("#seePassword").click(function showPassword(){
 
 $("#viewtop20List").click(function opentop20List(){
     document.getElementById("top20List").style.height = "100%";
-        $.ajax({
-         url: "golden-age-of-rock/top20.json", //un archivo json con datos de usuarios: nombre, apellido, etc
-         dataType: "json",
-         success: function(response) {
-           $.each(response.title, function(item) {
-             alert(item.artist); 
-           });
-         }
-        });
-       
-       });
-       
-
-
-
-   /* document.querySelector('#viewtop20List').addEventListener("click",getList);
     function getList(){
         const xhttp = new XMLHttpRequest();
     
@@ -105,19 +89,12 @@ $("#viewtop20List").click(function opentop20List(){
                        <td>$(item.artista)</td>
                     </tr>
                     `
-                }
-    
+                }    
             }
-        }
-    
+        }    
     }
-});
-*/
-
-
-
-
-
+});   
+    
 $("#closetop20List").click(function opentop20List(){
     document.getElementById("top20List").style.height = "0%";
 });
