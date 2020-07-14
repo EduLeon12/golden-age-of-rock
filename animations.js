@@ -64,40 +64,32 @@ $("#seePassword").click(function showPassword(){
 
 
 $("#viewtop20List").click(function opentop20List(){
-    document.getElementById("top20List").style.height = "100%";
-    function getList(){
-        const xhttp = new XMLHttpRequest();
+    document.getElementById("top20List").style.height = "100%"; 
+});  
+
+
+
     
-        xhttp.open("GET", "top20.json", true);
-    
-        xhttp.send();
-    
-        xhttp.onreadystatechange = function(){
-    
-            if(this.readyState == 4 && this.status == 200){
-    
-                let list = JSON.parse(this.responseText);
-                 // console.log(this.responseText);
-                
-                let songs = document.querySelector("#topSongs");
-                songs.innerHTML = "";
-    
-                for(let item of list){
-                    songs.innerHTML += `
-                    <tr>
-                       <td>$(item.title)</td>
-                       <td>$(item.artist)</td>
-                    </tr>
-                    `
-                }    
-            }
-        }    
-    }
-});   
-    
-$("#closetop20List").click(function opentop20List(){
+$("#closetop20List").click(function closeTop20List(){
     document.getElementById("top20List").style.height = "0%";
 });
 
-
+$("#viewtop20btn").click(function filltable(){
+const table = document.querySelector('#top20Table tbody');
+function loadList(){
+    fetch('/Users/eduardo/Documents/GitHub/golden-age-of-rock/top20.json')
+        .then(list => list.json())
+        .then(top20 => {
+            top20.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML += `
+                    <td>${top20.title}</td>
+                    <td>${top20.artist}</td>
+                    `;
+                table.appendChild(row);                
+            });
+        })      
+}
+loadList();
+});
 
