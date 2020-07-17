@@ -18,9 +18,8 @@
     <script defer src="checkout.js"></script>
     <script defer src="catalog.js"></script>
     <script defer src="animations.js"></script>
-    <script defer src="top20.json"></script>
     <script defer src="api.js"></script>
-    <script src="moment.min.js"></script>
+    
   
 
 </head>
@@ -75,32 +74,9 @@
     </div>
     </div>
 
-
-         <!-- Top 20 List -->
-         <div id="top20List" class="overlaytop">
-          <a href="javascript:void(0)" class="closebtn" id="closetop20List"  >&times;</a>
-          <div class="overlay-content">
-
-               <button id="viewtop20btn" class="  shadow bg-gray-600 hover:bg-gray-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button" >
-            View List
-           </button>
-         
-          <table class="w-full" id="top20Table" >
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Artist</th>
-              </tr>
-            </thead>
-            <tbody id="topSongs">
-
-            </tbody>
-          </table>       
-          
-          </div>
-          </div>
-
+ 
      <!-- Login -->
+     
     <div id="login" class=" overlay ">
         <a href="javascript:void(0)" class="closebtn" id="closeLogin"  >&times;</a>
         <div class="overlay-content">
@@ -279,24 +255,32 @@
 
     </section>
 
-    <!-- Api Search Bar  -->
-    <section class="bg-gray-900  py-8">
-    <div class="p-8">
-      <h3 class="w-full z-30 top-0 px-10 py-1 items-center  font-semibold text-2xl color-black ">
-        Listen to any artist while you shop
-      </h3>
-      <div class="bg-gray-800 flex items-center rounded-md shadow-xl">
-        <input class="rounded-sm bg-gray-800 w-full py-4 px-6 text-gray-600 leading-tight focus:outline-none" id="search" type="text" placeholder="Michael Jackson">        
-        <div class="p-4">
-          <button id="searchBtn" class="bg-gray-600 text-white rounded-full p-2 hover:bg-gray-700 focus:outline-none w-12 h-12 flex items-center justify-center">
-            <svg id="searchIcon" fill="none" class="h-6 w-6 text-gray-800" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-          </button>
+    <!-- Deezer Api Search Bar  -->
+
+    <div class="container my-4"> 
+      <form id="search-form" class="text-center">
+          <div class="form-group">
+              <div class="input-group mb-2">
+                  <input type="text" class="form-control" name="search" placeholder="Search for music..."
+                      aria-label="" aria-describedby="basic-addon1">
+                  <div class="input-group-append">
+                      <button id="showTracks" class="btn btn-info px-3" type="submit"><i class="fas fa-search"></i></button>
+                  </div>
+              </div>
           </div>
-        </div>
+      </form> 
+
+      <div id="tracks" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" id="closeTracklist"  >&times;</a>
+          <div class="overlay-content" id="search-result-wrapper">                
+                <section id="search-tracks" class="my-4 d-none">
+                  <header class="d-flex justify-content-between">
+                      <h2 class="h6 font-weight-normal">Tracks</h2>
+                  </header>
+                  <ul class="list-group"></ul>
+                </section>
+          </div>
       </div>
-    </div>
-  </section>
-    
 
 
     <section class="bg-gray-900  py-8">
@@ -309,11 +293,6 @@
     
         <h4 id="viewcartText"  class=" invisible w-full z-30 top-0 px-10 py-1 items-center font-semibold text-2xl color-black "  >
             View Cart    
-        </h4>
-
-        <h4 id="viewtop20List"  class=" w-full z-30 top-0 px-10 py-1 items-center font-semibold text-2xl color-black "  >
-          You can check out the list of the 20 best songs of all time
-       
         </h4>
       </section>
       

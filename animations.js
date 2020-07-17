@@ -29,9 +29,7 @@ $("#closeLogin").click(function closeLogin() {
     document.getElementById("login").style.width = "0%";
 });
 
-$("#closeLogIn").click(function closeLogin() {
-    document.getElementById("login").style.width = "0%";
-});
+
 
 $("#signUpBtn").click(function openSignUpForm(){
     document.getElementById("login").style.width = "0%"
@@ -52,6 +50,14 @@ $("#createAccount").click(function closeSignUpForm() {
     document.getElementById("signUpForm").style.height = "0%";
 });
 
+$("#closeSignup").click(function closeSignUpForm() {
+    document.getElementById("signUpForm").style.height = "0%";
+});
+
+$("#closeCheckout").click(function closeCheckout() {
+    document.getElementById("checkoutForm").style.height = "0%";
+});
+
 
 $("#seePassword").click(function showPassword(){
     if ($("#seePassword").is(":checked")){
@@ -61,37 +67,15 @@ $("#seePassword").click(function showPassword(){
     }
 });
 
-
-
-$("#viewtop20List").click(function opentop20List(){
-    document.getElementById("top20List").style.height = "100%"; 
+$("#showTracks").click(function opentrackList(){
+    document.getElementById("tracks").style.width = "20%"; 
 });  
 
-
-
     
-$("#closetop20List").click(function closeTop20List(){
-    document.getElementById("top20List").style.height = "0%";
+$("#closeTracklist").click(function closeTop20List(){
+    document.getElementById("tracks").style.width = "0%";
 });
 
-$("#viewtop20btn").click(function filltable(){
-const table = document.querySelector('#top20Table tbody');
-function loadList(){
-    fetch('/Users/eduardo/Documents/GitHub/golden-age-of-rock/top20.json')
-        .then(list => list.json())
-        .then(top20 => {
-            top20.forEach(item => {
-                const row = document.createElement('tr');
-                row.innerHTML += `
-                    <td>${top20.title}</td>
-                    <td>${top20.artist}</td>
-                    `;
-                table.appendChild(row);                
-            });
-        })      
-}
-loadList();
-});
 
 $("#searchBtn").hover(function searchIconColor(){
     $("#searchIcon").removeClass("text-gray-800").addClass("text-gray-600");
