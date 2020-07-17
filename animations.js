@@ -93,3 +93,10 @@ function loadList(){
 loadList();
 });
 
+$("#searchBtn").hover(function searchIconColor(){
+    $("#searchIcon").removeClass("text-gray-800").addClass("text-gray-600");
+});
+
+$("#searchBtn").mouseleave(function searchIconColor(){
+    $("#searchIcon").removeClass("text-gray-600").addClass("text-gray-800");
+});
