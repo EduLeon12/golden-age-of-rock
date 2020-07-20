@@ -8,17 +8,17 @@
     <title>Age of Rock</title>
     <meta name="description" content="">
     <meta name="keywords" content="tailwind,tailwindcss,tailwind css,css,starter template,free template,store template, shop layout, minimal, monochrome, minimalistic, theme, nordic">
-    <link href="css.css" rel="stylesheet">
-    <link href="animations.css" rel="stylesheet">
+    <link href="style/css.css" rel="stylesheet">
+    <link href="style/animations.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script defer src="shoppingCart.Js"></script>
-    <script defer src="database.js"></script>
-    <script defer src="checkout.js"></script>
-    <script defer src="catalog.js"></script>
-    <script defer src="animations.js"></script>
-    <script defer src="api.js"></script>
+    <script defer src="src/shoppingCart.Js"></script>
+    <script defer src="src/database.js"></script>
+    <script defer src="src/checkout.js"></script>
+    <script defer src="src/catalog.js"></script>
+    <script defer src="src/animations.js"></script>
+    <script defer src="src/api.js"></script>
     
   
 
@@ -63,13 +63,10 @@
     <div id="myCart" class="overlay">
     <a href="javascript:void(0)" class="closebtn" id="closeCart"  >&times;</a>
     <div class="overlay-content">
-
-        <div class="container catalogo mx-auto flex items-center flex-wrap pt-4 pb-12" id="miniCart">
+       <div class="container  mx-auto flex items-center flex-wrap pt-4 pb-12" id="miniCart">
             
-       </div>
-        <div class="w-full" >
-        
-           <button id="checkout" class="shadow bg-gray-600 hover:bg-gray-900 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button" > Go to checkout  </p>        
+       </div> 
+           <button id="checkout" class="invisible shadow bg-gray-600 hover:bg-gray-900 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button" > Go to checkout  </p>        
      </div>
     </div>
     </div>
@@ -263,7 +260,7 @@
           <div class="form-group">
               <div class="input-group mb-2">
                 <h4  class="w-full z-30 top-0 px-10 py-1 items-center font-semibold text-4xl color-black">
-                  Look for your favorite songs   
+                 Listen to your favorite song while you shop
               </h4>
                   <input type="text" class="form-control md:w-1/2 rounded bg-gray-600 text-white" name="search" placeholder=" Beat it "
                       aria-label="" aria-describedby="basic-addon1">
@@ -292,7 +289,7 @@
             Store     
         </h1>
         <div id="catalogo" class="container catalogo mx-auto flex items-center flex-wrap pt-4 pb-12" >
-            <!-- Donde colocaremos el catalogo por JS -->
+            <!-- Pure Js Catalog -->
         </div>
     
         <h4 id="viewcartText"  class=" invisible w-full z-30 top-0 px-10 py-1 items-center font-semibold text-2xl color-black "  >

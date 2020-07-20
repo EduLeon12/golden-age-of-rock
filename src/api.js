@@ -22,8 +22,8 @@ const getData = async url => {
 	}
 
 	return await response.json();
+	 
 };
-
 
 
 // Get search results for tracks
@@ -36,6 +36,7 @@ const searchTracks = async search => {
 		throw new Error('Could not fetch tracks.');
 	}
 	return tracks;
+	
 };
 
 // Collect search results for tracks, limited to 5 items 
@@ -43,6 +44,7 @@ const searchAll = async search => {
 	return {
 		tracks: await searchTracks(`${search}&limit=5`)
 	};
+	console.log(searchAll)
 };
 
 
@@ -64,33 +66,21 @@ const getArtistInfo = async id => {
 // Render all tracks related to search result
 const renderTrackResult = track => {
 	tracksEl.querySelector('ul').innerHTML += `
-		<li class="list-group-item list-group-item-dark">
+		<li class="items-center list-group-item list-group-item-dark">
 			<img src="${track.album.cover}"
-				class="mr-3 cover-img" alt="">
+				class="rounded-full list-group-item track-disc" id="trackImage" alt="">
 			<div>
 				<p class="mb-0">${track.title}</p>
 				<p class="text-muted mb-0">
-					<a href="#" data-artist="${track.artist.id}">${track.artist.name}</a>,
-					<a href="#" data-album="${track.album.id}">${track.album.title}</a></p>
+					<a href="#" data-artist="${track.artist.id}">${track.artist.name}</a>
+					<video controls src="${track.preview}"  type="audio/mpeg" class="media-document audio items-center" id="trackPreview">  </video>
+					
 			</div>
 		</li>`;
 };
 
 // Render tracklist used for artist & album info
-const renderTrackList = (tracks, el) => {
-	// Clear list
-	el.querySelector('ul').innerHTML = '';
 
-	// Add tracks to list
-	tracks.forEach((track, i) => {
-		let duration = moment.unix(track.duration).format('m:ss');
-		el.querySelector('ul').innerHTML += `
-			<li class="list-group-item list-group-item-dark list-group-item-small">
-			<p class="mb-0"><span class="mr-2">${i + 1}.</span> ${track.title}</p>
-			<p class="mb-0 text-muted">${duration}<i class="far fa-play-circle ml-4 text-white"></i></p>
-			</li>`;
-	});
-};
 
 // Clear HTML elements
 const clearInfo = element => {

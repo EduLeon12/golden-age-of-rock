@@ -102,21 +102,5 @@ db.get().forEach(item => {
     catalogoEl.appendChild(productoEl);
 
 })
-/*
-var settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://mourits-lyrics.p.rapidapi.com/?artist=The%20Beatles&song=Hey%20jude",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "mourits-lyrics.p.rapidapi.com",
-		"x-rapidapi-key": "f441402948msh8ac23bc80b07761p1d435ejsn4d1213af8802"
-	}
-}
-
-$.ajax(settings).done(function (response) {
-	console.log(response);
-});
 
 
-*/

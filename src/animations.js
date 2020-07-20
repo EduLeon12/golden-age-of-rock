@@ -30,7 +30,6 @@ $("#closeLogin").click(function closeLogin() {
 });
 
 
-
 $("#signUpBtn").click(function openSignUpForm(){
     document.getElementById("login").style.width = "0%"
     document.getElementById("signUpForm").style.height = "100%";
@@ -68,7 +67,7 @@ $("#seePassword").click(function showPassword(){
 });
 
 $("#showTracks").click(function opentrackList(){
-    document.getElementById("tracks").style.width = "50%"; 
+    document.getElementById("tracks").style.width = "35%"; 
 });  
 
     
@@ -83,4 +82,8 @@ $("#searchBtn").hover(function searchIconColor(){
 
 $("#searchBtn").mouseleave(function searchIconColor(){
     $("#searchIcon").removeClass("text-gray-600").addClass("text-gray-800");
+});
+
+$("#trackPreview").click(function rotateminiDisc(){
+    $("trackImage").addclass("miniDisc");
 });
