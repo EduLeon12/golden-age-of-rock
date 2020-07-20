@@ -66,3 +66,8 @@ function Product(id, name, price) {
 }
 
 var myShoppingCart = new ShoppingCart();
+
+
+
+console.log(myShoppingCart.getTotalProducts());
+console.log(myShoppingCart.getTotalAmount());

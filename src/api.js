@@ -38,7 +38,7 @@ const searchTracks = async search => {
 	return tracks;
 };
 
-// Collect search results for artist, albums and tracks, limited to 5 items each
+// Collect search results for tracks, limited to 5 items 
 const searchAll = async search => {
 	return {
 		tracks: await searchTracks(`${search}&limit=5`)
