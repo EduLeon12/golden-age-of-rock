@@ -68,7 +68,7 @@ $("#seePassword").click(function showPassword(){
 });
 
 $("#showTracks").click(function opentrackList(){
-    document.getElementById("tracks").style.width = "20%"; 
+    document.getElementById("tracks").style.width = "50%"; 
 });  
 
     
