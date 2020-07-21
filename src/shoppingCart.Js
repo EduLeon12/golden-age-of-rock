@@ -1,4 +1,4 @@
-// @ts-check
+
 
 // SHOPPING CART
 
@@ -18,8 +18,8 @@ function ShoppingCart() {
             cart[id] = 1;
 
         localStorage.setItem('cart', JSON.stringify(cart))
-        console.log("Producto con id:", id, ". Tienes un total de: ", cart[id], "de estos productos en el carrito");
-        console.log("Total: $", this.getTotalAmount())
+      //  console.log("Producto con id:", id, ". Tienes un total de: ", cart[id], "de estos productos en el carrito");
+       // console.log("Total: $", this.getTotalAmount())
         return cart[id];
     }
 
@@ -27,8 +27,8 @@ function ShoppingCart() {
         if (cart[id] && cart[id] >= 1) {
             cart[id] -= 1;
             localStorage.setItem('cart', JSON.stringify(cart))
-            console.log("Producto con id:", id, "removido del carrito con un total de", cart[id], "restantes de este producto");
-            console.log("Total: $", this.getTotalAmount())
+         //   console.log("Producto con id:", id, "removido del carrito con un total de", cart[id], "restantes de este producto");
+           // console.log("Total: $", this.getTotalAmount())
         }
         return cart[id];
     }   
@@ -56,6 +56,7 @@ function ShoppingCart() {
             total += cart[productId]
         })  
         return total; 
+      
     }   
 }
 
@@ -67,14 +68,31 @@ function Product(id, name, price) {
 
 var myShoppingCart = new ShoppingCart();
 
+console.log(myShoppingCart.cart)
 
-//MiniCart
 
 const shoppinCartEl = document.getElementById('miniCart');
 
+const productsInCart = []
+  for (const productId in myShoppingCart.get()) {
+  if (myShoppingCart.get() [productId] > 0)
+      productsInCart.push({
+      product: db.getById(productId),
+      quantity: myShoppingCart.get()[productId],
+      name: db.getById(name),
+      image: db.getById(src),
+    })
+ console.log(productsInCart)
+}
 
 
-db.get().forEach(item => {
+
+//MiniCart
+ /*
+
+if (myShoppingCart.getTotalProducts() >= 1) {
+   
+    Product().forEach(item => {
     const miniProductoEl = document.createElement("div");
     miniProductoEl.className = "bg-gray-900 w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col ";
     
@@ -84,7 +102,7 @@ db.get().forEach(item => {
     miniDiscEl.src = item.src;
     
     // title
-    const miniTitleEl = document.createElement("span");
+    const miniTitleEl = document.createElement("div");
     miniTitleEl.className = "flex justify-between items-center py-2";
 
     const miniNameEl = document.createElement("span");
@@ -161,3 +179,6 @@ db.get().forEach(item => {
     shoppinCartEl.appendChild(priceEl);
 
 })
+}
+
+*/

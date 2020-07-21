@@ -6,7 +6,7 @@ $("#about").click(function showIntro() {
 });
 
 $("#viewCart").click(function openCart(){
-    document.getElementById("myCart").style.width = "100%";
+    document.getElementById("myCart").style.width = "50%";
 });
 
 $("#closeCart").click(function closeCart() {
@@ -18,7 +18,7 @@ $(":button").click(function showText(){
 });
 
 $("#viewcartText").click(function openCart(){
-    document.getElementById("myCart").style.width = "100%";
+    document.getElementById("myCart").style.width = "50%";
 });
 
 $("#loginbtn").click(function openLogin(){
@@ -86,4 +86,12 @@ $("#searchBtn").mouseleave(function searchIconColor(){
 
 $("#trackPreview").click(function rotateminiDisc(){
     $("trackImage").addclass("miniDisc");
+});
+/*
+if (myShoppingCart.getTotalProducts() >= 1 ) {
+    document.getElementById("emptyCart").addClass("invisible");
+};
+*/
+$("#emptyCart").click(function closeCart() {
+    document.getElementById("myCart").style.width = "0%";
 });
