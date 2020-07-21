@@ -79,8 +79,6 @@ const renderTrackResult = track => {
 		</li>`;
 };
 
-// Render tracklist used for artist & album info
-
 
 // Clear HTML elements
 const clearInfo = element => {

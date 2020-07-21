@@ -68,7 +68,7 @@ function Product(id, name, price) {
 var myShoppingCart = new ShoppingCart();
 
 
-//Catalog
+//MiniCart
 
 const shoppinCartEl = document.getElementById('miniCart');
 
