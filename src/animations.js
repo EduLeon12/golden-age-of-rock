@@ -87,19 +87,38 @@ $("#searchBtn").mouseleave(function searchIconColor(){
 $("#trackPreview").click(function rotateminiDisc(){
     $("trackImage").addclass("miniDisc");
 });
-/*
-if (myShoppingCart.getTotalProducts() >= 1 ) {
-    document.getElementById("emptyCart").addClass("invisible");
-};
-*/
+
+
 $("#emptyCart").click(function closeCart() {
     document.getElementById("myCart").style.width = "0%";
 });
 
-$("#addCartbtn").onclick(function addedtoCart() {
-    if (text.innerHTML === "Add to Cart") {
-        text.innerHTML = "Album added to Cart"
-    } else {
-        text.innerHTML === "Add to Cart";
-    }
-})    
+$(function shownbmitems(){
+    $("#nbmCartItems").html(function nbmitems(){
+        const items = myShoppingCart.getTotalProducts();
+        return items
+    })
+})
+
+if (myShoppingCart.getTotalById() > 0) {
+    const buttonid = 
+    $("#addCartbtn").text("Album added to Cart");
+}
+
+
+if(myShoppingCart.getTotalProducts() > 0 ){
+    $("#miniCarttotalprice").text( 
+        function totalprice(){
+        const price = myShoppingCart.getTotalAmount();
+        return price
+    })
+    $("#checkout").removeClass("invisible");
+    $("#miniCarttotalprice").removeClass("invisible");
+    $("#totaltext").removeClass("invisible");
+    $("#dolarSign").removeClass("invisible");
+    $("#emptyCartbtn").removeClass("invisible");
+    $("#emptyCart").addClass("invisible");
+    $("#miniCartText").addClass("invisible");
+}
+
+

@@ -19,7 +19,7 @@ function ShoppingCart() {
 
         sessionStorage.setItem('cart', JSON.stringify(cart))
       //  console.log("Producto con id:", id, ". Tienes un total de: ", cart[id], "de estos productos en el carrito");
-        console.log("Total: $", this.getTotalAmount())
+      //  console.log("Total: $", this.getTotalAmount())
         return cart[id];
     }
 
@@ -95,19 +95,18 @@ productsInCart.forEach(item => {
     
     // image
     const miniDiscEl = document.createElement("img");
-    miniDiscEl.className = " h-24 w-24";
+    miniDiscEl.className = " m-4 h-24 w-24 rounded-full items-center";
     miniDiscEl.src = item.image;
     
     // title
     const miniTitleEl = document.createElement("div");
-    miniTitleEl.className = "flex justify-between items-center py-2";
+    miniTitleEl.className = " items-center ";
 
     const miniNameEl = document.createElement("span");
     miniNameEl.textContent = item.title;
 
-  
     const cartControlsEl = document.createElement("span");
-    cartControlsEl.className = "flex items-center justify-center";
+    cartControlsEl.className = " items-center justify-center";
 
     // Add 
     const addButtonEl = document.createElement("button");
@@ -124,7 +123,7 @@ productsInCart.forEach(item => {
     if (total > 0) {
         removeButtonEl.className = "block"        
         totalEl.className = "block px-2";
-        $("#")
+        
     }
     else {
         removeButtonEl.className = "hidden";
@@ -162,6 +161,9 @@ productsInCart.forEach(item => {
         }
     });
     
+     
+
+    
     cartControlsEl.appendChild(removeButtonEl);
     cartControlsEl.appendChild(totalEl);
     cartControlsEl.appendChild(addButtonEl);
@@ -177,7 +179,12 @@ productsInCart.forEach(item => {
     shoppinCartEl.appendChild(miniDiscEl);
     shoppinCartEl.appendChild(miniTitleEl);
     shoppinCartEl.appendChild(priceEl);
+    
 
+})
+
+$("#emptyCartbtn").click(function emptycart(){
+     sessionStorage.clear("cart");
 })
 
 

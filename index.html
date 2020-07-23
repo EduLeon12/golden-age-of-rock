@@ -27,7 +27,7 @@
 <body class="bg-gray-900 text-gray-600 work-sans leading-normal text-base tracking-normal">
 
     <!--Nav-->
-    <nav id="header" class="w-full z-30 top-0 py-1">
+    <nav id="header" class="w-full z-30 top-0 py-1  bg-gray-800" >
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
 
             <div class="order-1 md:order-2">
@@ -55,6 +55,7 @@
                         <circle cx="17.5" cy="18.5" r="1.5" />
                     </svg>
                 </a>
+                <button id="nbmCartItems" class="h-4 w-4 rounded text-gray-600  text-sm pb-5 ml-2">   </button>
             </div>
         </div>
     </nav>
@@ -63,11 +64,15 @@
     <div id="myCart" class="overlay">
     <a href="javascript:void(0)" class="closebtn" id="closeCart"  >&times;</a>
     <div class="overlay-content">
-       <a href="#catalogo" id="emptyCart"> Your cart is empty, continue shopping? </a>
-       <div class="container  mx-auto flex items-center flex-wrap pt-4 pb-12" id="miniCart">
-            
-       </div> 
-           <button id="checkout" class="invisible shadow bg-gray-600 hover:bg-gray-900 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button" > Go to checkout  </p>        
+       <h4 id ="miniCartText"> Your cart is empty, <a href="#catalogo" id="emptyCart"> GO TO STORE </a> </h4>
+       <div class="  mx-auto flex items-center  pt-4 pb-12" id="miniCart">
+          
+       </div>
+       <h4 id="totaltext" class="invisible py-2 text-2xl">
+         Total: <span id="miniCarttotalprice" class="invisible"></span><span id="dolarSign" class="invisible"> $</span>
+       </h4>        
+           <button id="checkout" class="invisible shadow bg-gray-600 hover:bg-gray-900 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button" > Go to checkout  </button>    
+           <button id="emptyCartbtn" class=" invisible shadow bg-gray-600 hover:bg-gray-900 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button" > Empty Cart  </button>          
      </div>
     </div>
     </div>
