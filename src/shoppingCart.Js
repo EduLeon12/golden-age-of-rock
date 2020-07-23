@@ -4,11 +4,11 @@
 
 function ShoppingCart() {
     // { id: numero de discos en el carrito }
-     let cart = JSON.parse(localStorage.getItem('cart'));
+     let cart = JSON.parse(sessionStorage.getItem('cart'));
 
     if (!cart) {
         cart = {}
-        localStorage.setItem('cart', JSON.stringify({}))
+        sessionStorage.setItem('cart', JSON.stringify({}))
     }
 
     this.addOne = function(id) {
@@ -17,16 +17,16 @@ function ShoppingCart() {
         else 
             cart[id] = 1;
 
-        localStorage.setItem('cart', JSON.stringify(cart))
+        sessionStorage.setItem('cart', JSON.stringify(cart))
       //  console.log("Producto con id:", id, ". Tienes un total de: ", cart[id], "de estos productos en el carrito");
-       // console.log("Total: $", this.getTotalAmount())
+        console.log("Total: $", this.getTotalAmount())
         return cart[id];
     }
 
     this.removeOne = function(id) {
         if (cart[id] && cart[id] >= 1) {
             cart[id] -= 1;
-            localStorage.setItem('cart', JSON.stringify(cart))
+            sessionStorage.setItem('cart', JSON.stringify(cart))
          //   console.log("Producto con id:", id, "removido del carrito con un total de", cart[id], "restantes de este producto");
            // console.log("Total: $", this.getTotalAmount())
         }
@@ -68,46 +68,44 @@ function Product(id, name, price) {
 
 var myShoppingCart = new ShoppingCart();
 
-console.log(myShoppingCart.cart)
 
+
+//MiniCart
 
 const shoppinCartEl = document.getElementById('miniCart');
 
 const productsInCart = []
-  for (const productId in myShoppingCart.get()) {
+  for (const productId in myShoppingCart.get())
+  {
   if (myShoppingCart.get() [productId] > 0)
-      productsInCart.push({
+      productsInCart.push(
+    {
       product: db.getById(productId),
       quantity: myShoppingCart.get()[productId],
-      name: db.getById(name),
-      image: db.getById(src),
+      title: db.getById(productId).name,
+      image: db.getById(productId).src,
+      price: db.getById(productId).price,
     })
- console.log(productsInCart)
+
 }
 
-
-
-//MiniCart
- /*
-
-if (myShoppingCart.getTotalProducts() >= 1) {
-   
-    Product().forEach(item => {
+productsInCart.forEach(item => {
     const miniProductoEl = document.createElement("div");
     miniProductoEl.className = "bg-gray-900 w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col ";
     
     // image
     const miniDiscEl = document.createElement("img");
     miniDiscEl.className = " h-24 w-24";
-    miniDiscEl.src = item.src;
+    miniDiscEl.src = item.image;
     
     // title
     const miniTitleEl = document.createElement("div");
     miniTitleEl.className = "flex justify-between items-center py-2";
 
     const miniNameEl = document.createElement("span");
-    miniNameEl.textContent = item.name;
+    miniNameEl.textContent = item.title;
 
+  
     const cartControlsEl = document.createElement("span");
     cartControlsEl.className = "flex items-center justify-center";
 
@@ -126,6 +124,7 @@ if (myShoppingCart.getTotalProducts() >= 1) {
     if (total > 0) {
         removeButtonEl.className = "block"        
         totalEl.className = "block px-2";
+        $("#")
     }
     else {
         removeButtonEl.className = "hidden";
@@ -166,19 +165,20 @@ if (myShoppingCart.getTotalProducts() >= 1) {
     cartControlsEl.appendChild(removeButtonEl);
     cartControlsEl.appendChild(totalEl);
     cartControlsEl.appendChild(addButtonEl);
+    miniTitleEl.appendChild(cartControlsEl);
+
 
     miniTitleEl.appendChild(miniNameEl);
-    miniTitleEl.appendChild(cartControlsEl);
 
     // precio
     const priceEl = document.createElement("span");
-    priceEl.textContent = "$" + item.price.toFixed(2);
+    priceEl.textContent = " $" + item.price;
 
     shoppinCartEl.appendChild(miniDiscEl);
     shoppinCartEl.appendChild(miniTitleEl);
     shoppinCartEl.appendChild(priceEl);
 
 })
-}
 
-*/
+
+

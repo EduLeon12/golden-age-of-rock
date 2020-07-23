@@ -95,3 +95,11 @@ if (myShoppingCart.getTotalProducts() >= 1 ) {
 $("#emptyCart").click(function closeCart() {
     document.getElementById("myCart").style.width = "0%";
 });
+
+$("#addCartbtn").onclick(function addedtoCart() {
+    if (text.innerHTML === "Add to Cart") {
+        text.innerHTML = "Album added to Cart"
+    } else {
+        text.innerHTML === "Add to Cart";
+    }
+})    

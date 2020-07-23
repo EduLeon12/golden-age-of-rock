@@ -44,7 +44,6 @@ const searchAll = async search => {
 	return {
 		tracks: await searchTracks(`${search}&limit=5`)
 	};
-	console.log(searchAll)
 };
 
 

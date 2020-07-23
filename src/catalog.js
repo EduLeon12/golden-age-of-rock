@@ -29,67 +29,20 @@ db.get().forEach(item => {
     nameEl.textContent = item.name;
 
     
-    const cartControlsEl = document.createElement("div");
-    cartControlsEl.className = "flex items-center justify-center";
-
-    // Add 
     const addButtonEl = document.createElement("button");
     
-    // total
-    const totalEl = document.createElement("span");
-    const total = myShoppingCart.getTotalById(item.id);
-    totalEl.id = "total-" + item.id;
-    totalEl.textContent = total;
-
-    // remove
-    const removeButtonEl = document.createElement("button");
-    
-    if (total > 0) {
-        removeButtonEl.className = "block"        
-        totalEl.className = "block px-2";
-    }
-    else {
-        removeButtonEl.className = "hidden";
-        totalEl.className = "hidden";
-    }
-
     addButtonEl.innerHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="fill-current text-yellow-900">
-            <path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1
-             1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/>
-        </svg>`
 
+    <button id="addCartbtn"  class="addCartbutton shadow bg-gray-600 hover:bg-gray-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button" >
+     Add to Cart
+   </button>`
+   
     addButtonEl.addEventListener('click', () => {
         const newTotal = myShoppingCart.addOne(item.id);
-        totalEl.textContent = newTotal;
-        if (newTotal === 1) {
-            totalEl.className = "block px-2";
-            removeButtonEl.className = "block";
-   
-        }
     });
-   
-    removeButtonEl.innerHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="fill-current text-red-900" style="transform: rotate(45deg);">
-            <path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/>
-        </svg>
-    `
-    removeButtonEl.addEventListener('click', () => {
-        const newTotal = myShoppingCart.removeOne(item.id);
-        totalEl.textContent = newTotal;
-        if (newTotal === 0) {
-            totalEl.className = "hidden";
-            removeButtonEl.className = "hidden";
-           
-        }
-    });
-    
-    cartControlsEl.appendChild(removeButtonEl);
-    cartControlsEl.appendChild(totalEl);
-    cartControlsEl.appendChild(addButtonEl);
 
     titleEl.appendChild(nameEl);
-    titleEl.appendChild(cartControlsEl);
+    
 
     // precio
     const priceEl = document.createElement("span");
@@ -97,7 +50,8 @@ db.get().forEach(item => {
 
     productoEl.appendChild(discEl);
     productoEl.appendChild(titleEl);
-    productoEl.appendChild(priceEl);
+    titleEl.appendChild(priceEl);
+    productoEl.appendChild(addButtonEl);
     audioEl.appendChild(sourceEl);
     catalogoEl.appendChild(productoEl);
 
