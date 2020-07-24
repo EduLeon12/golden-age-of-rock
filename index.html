@@ -24,10 +24,11 @@
 
 </head>
 
-<body class="bg-gray-900 text-gray-600 work-sans leading-normal text-base tracking-normal">
+
+<body class="bg-gray-900 text-gray-600 work-sans max leading-normal text-base tracking-normal">
 
     <!--Nav-->
-    <nav id="header" class="w-full z-30 top-0 py-1  bg-gray-800" >
+    <nav id="header" class="w-full z-30 top-0 py-1   bg-gray-800" >
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
 
             <div class="order-1 md:order-2">
@@ -65,14 +66,14 @@
     <a href="javascript:void(0)" class="closebtn" id="closeCart"  >&times;</a>
     <div class="overlay-content">
        <h4 id ="miniCartText"> Your cart is empty, <a href="#catalogo" id="emptyCart"> GO TO STORE </a> </h4>
-       <div class="  mx-auto flex items-center  pt-4 pb-12" id="miniCart">
+       <div  id="miniCart">
           
        </div>
-       <h4 id="totaltext" class="invisible py-2 text-2xl">
+       <h4 id="totaltext" class="invisible py-2 mt-4 text-2xl">
          Total: <span id="miniCarttotalprice" class="invisible"></span><span id="dolarSign" class="invisible"> $</span>
        </h4>        
-           <button id="checkout" class="invisible shadow bg-gray-600 hover:bg-gray-900 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button" > Go to checkout  </button>    
-           <button id="emptyCartbtn" class=" invisible shadow bg-gray-600 hover:bg-gray-900 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button" > Empty Cart  </button>          
+           <button id="checkout" class="invisible shadow bg-gray-600 hover:bg-gray-900 focus:shadow-outline focus:outline-none text-white font-bold mb-6 py-2 px-4      rounded" type="button" > Go to checkout  </button>    
+           <button id="emptyCartbtn" class=" invisible shadow bg-gray-600 hover:bg-gray-900 focus:shadow-outline focus:outline-none mb-6  text-white font-bold py-2 px-4 rounded" type="button" > Empty Cart  </button>          
      </div>
     </div>
     </div>
@@ -127,16 +128,16 @@
             <form class="mx-auto w-full max-w-lg">
                 <div class="flex flex-wrap -mx-3 mb-6">
                   <div class="max-w-sm md:w-1/2 px-3 mb-6 md:mb-0 items-center ">
-                    <label class="block uppercase item tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                    <label class="block uppercase item tracking-wide text-gray-700 text-xs font-bold mb-2"   for="grid-first-name">
                       Full Name
                     </label>
-                    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="John">
+                    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="fullName" type="text" placeholder="John">
                   </div>
                   <div class="max-w-sm md:w-1/2 px-3 ">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-email">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" id="email" for="grid-email">
                       Email
                     </label>
-                    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="email" placeholder="Lennon@beatle.com">
+                    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" type="email" placeholder="Lennon@beatle.com">
                   </div>
                 </div>
                 <div class="flex flex-wrap -mx-3 mb-6 items-center">
@@ -144,22 +145,24 @@
                     <label  class=" uppercase tracking-normal text-gray-700 text-xs font-bold mb-2" for="grid-password">
                       Password                      
                     </label>
-                    <input id="signUpPassword" class="appearance-none block max-w-lg bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="******************">                
+                    <input id="signUpPassword" class="appearance-none block max-w-lg bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="password" type="password" placeholder="******************">                
                   </div>       
                   <div class="max-w-lg px-3 items-center">
                     <label class="block uppercase tracking-normal text-gray-700 text-xs font-bold mb-2" for="grid-password">
                       Confirm Password
-              <!--        <div>
+                    </label>
+                    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="confirmPassword" type="password" placeholder="******************">   
+                   <div>
                       <label class="text-gray-500 font-bold">
                         <input id="seePassword" class="invisible mr-2 leading-tight " type="checkbox">
                         <svg  class="h-6 w-6 items-center" fill="none"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
                     </label>
                     </div> 
-               -->     
-                    </label>
-                    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-confirmPassword" type="password" placeholder="******************">                                          
+                                                         
                   </div>       
+                 
                  </div>
+                 <h3 class="text-center items-center mb-3 invisible" id="passwordMatch" > Passwords do not match </h3>
                   <div class="w-full">
                     <div class="md:flex md:items-center mb-6">     
                         <label class="md:w-1/2 block text-gray-500 font-bold">

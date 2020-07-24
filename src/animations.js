@@ -7,6 +7,7 @@ $("#about").click(function showIntro() {
 
 $("#viewCart").click(function openCart(){
     document.getElementById("myCart").style.width = "50%";
+  
 });
 
 $("#closeCart").click(function closeCart() {
@@ -46,7 +47,20 @@ $("#confirmPurchase").click(function closeCheckout(){
 
 
 $("#createAccount").click(function closeSignUpForm() {
-    document.getElementById("signUpForm").style.height = "0%";
+   // document.getElementById("signUpForm").style.height = "0%";
+    function createAccount() {
+        const fullName = $("#fullName").val();
+        const email = $("#email").val();
+        const password = $("#password").val();
+        const confirmPassword = $("#confirmPassword").val()
+        
+         if (password != confirmPassword ){
+            $("#passwordMatch").removeclass("invisible");
+        } else {
+          sessionStorage.setItem(fullName, email, password);
+    }
+        
+    }
 });
 
 $("#closeSignup").click(function closeSignUpForm() {
@@ -120,5 +134,7 @@ if(myShoppingCart.getTotalProducts() > 0 ){
     $("#emptyCart").addClass("invisible");
     $("#miniCartText").addClass("invisible");
 }
+
+
 
 

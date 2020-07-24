@@ -71,7 +71,6 @@ var myShoppingCart = new ShoppingCart();
 
 
 //MiniCart
-
 const shoppinCartEl = document.getElementById('miniCart');
 
 const productsInCart = []
@@ -89,27 +88,30 @@ const productsInCart = []
 
 }
 
+
+
 productsInCart.forEach(item => {
     const miniProductoEl = document.createElement("div");
-    miniProductoEl.className = "bg-gray-900 w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col ";
+    miniProductoEl.className = "w-full ";
     
     // image
     const miniDiscEl = document.createElement("img");
-    miniDiscEl.className = " m-4 h-24 w-24 rounded-full items-center";
+    miniDiscEl.className = " m-4 h-24 w-24 rounded-full ";
     miniDiscEl.src = item.image;
     
     // title
-    const miniTitleEl = document.createElement("div");
-    miniTitleEl.className = " items-center ";
+    const miniTitleEl = document.createElement("span");
+    miniTitleEl.className = "flex flex-wrap items-center ";
 
     const miniNameEl = document.createElement("span");
     miniNameEl.textContent = item.title;
 
     const cartControlsEl = document.createElement("span");
-    cartControlsEl.className = " items-center justify-center";
+    cartControlsEl.className = " items-center mx-4 p-2 justify-center";
 
     // Add 
     const addButtonEl = document.createElement("button");
+    addButtonEl.className = "p-2"
     
     // total
     const totalEl = document.createElement("span");
@@ -119,19 +121,10 @@ productsInCart.forEach(item => {
 
     // remove
     const removeButtonEl = document.createElement("button");
+    removeButtonEl.className = "p-2"
     
-    if (total > 0) {
-        removeButtonEl.className = "block"        
-        totalEl.className = "block px-2";
-        
-    }
-    else {
-        removeButtonEl.className = "hidden";
-        totalEl.className = "hidden";
-    }
-
     addButtonEl.innerHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="fill-current text-yellow-900">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="fill-current p-2 text-yellow-900">
             <path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1
              1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/>
         </svg>`
@@ -140,8 +133,8 @@ productsInCart.forEach(item => {
         const newTotal = myShoppingCart.addOne(item.id);
         totalEl.textContent = newTotal;
         if (newTotal === 1) {
-            totalEl.className = "block px-2";
-            removeButtonEl.className = "block";
+            totalEl.className = "block px-2 m-2 ";
+            
    
         }
     });
@@ -151,6 +144,8 @@ productsInCart.forEach(item => {
             <path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/>
         </svg>
     `
+  
+
     removeButtonEl.addEventListener('click', () => {
         const newTotal = myShoppingCart.removeOne(item.id);
         totalEl.textContent = newTotal;
@@ -162,19 +157,18 @@ productsInCart.forEach(item => {
     });
     
      
-
-    
+    miniTitleEl.appendChild(cartControlsEl);
+    miniTitleEl.appendChild(miniNameEl);
+   
     cartControlsEl.appendChild(removeButtonEl);
     cartControlsEl.appendChild(totalEl);
     cartControlsEl.appendChild(addButtonEl);
-    miniTitleEl.appendChild(cartControlsEl);
-
-
-    miniTitleEl.appendChild(miniNameEl);
+   
 
     // precio
     const priceEl = document.createElement("span");
-    priceEl.textContent = " $" + item.price;
+    priceEl.textContent = " $ " + item.price;
+    priceEl.className = "mx-2"
 
     shoppinCartEl.appendChild(miniDiscEl);
     shoppinCartEl.appendChild(miniTitleEl);
@@ -185,6 +179,7 @@ productsInCart.forEach(item => {
 
 $("#emptyCartbtn").click(function emptycart(){
      sessionStorage.clear("cart");
+     window.location.reload();
 })
 
 
