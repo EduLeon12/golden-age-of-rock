@@ -46,21 +46,30 @@ $("#confirmPurchase").click(function closeCheckout(){
 });
 
 
-$("#createAccount").click(function closeSignUpForm() {
-   // document.getElementById("signUpForm").style.height = "0%";
-    function createAccount() {
+$("#createAccount").click(function createAcount() {
+   // document.getElementById("signUpForm").style.height = "0%";   
         const fullName = $("#fullName").val();
         const email = $("#email").val();
         const password = $("#password").val();
-        const confirmPassword = $("#confirmPassword").val()
-        
-         if (password != confirmPassword ){
-            $("#passwordMatch").removeclass("invisible");
+        const confirmPassword = $("#confirmPassword").val();
+        const subscription = "false";
+
+        if ($("#subscription").is(":checked")){
+           const subscription = "true";
+        } 
+       
+         if (password === confirmPassword ){
+            const accounData = {
+                nameAcc: fullName,
+                emailAcc: email,
+                passwordAcc: password,
+                isSubscribed: subscription
+            }           
+            sessionStorage.setItem('account', JSON.stringify(accounData));   
         } else {
-          sessionStorage.setItem(fullName, email, password);
+            $("#passwordMatch").removeClass("invisible");           
     }
-        
-    }
+  
 });
 
 $("#closeSignup").click(function closeSignUpForm() {
@@ -136,5 +145,4 @@ if(myShoppingCart.getTotalProducts() > 0 ){
 }
 
 
-
-
+ 

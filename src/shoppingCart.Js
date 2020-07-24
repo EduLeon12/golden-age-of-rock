@@ -102,10 +102,11 @@ productsInCart.forEach(item => {
     // title
     const miniTitleEl = document.createElement("span");
     miniTitleEl.className = "flex flex-wrap items-center ";
+  
 
     const miniNameEl = document.createElement("span");
     miniNameEl.textContent = item.title;
-
+    
     const cartControlsEl = document.createElement("span");
     cartControlsEl.className = " items-center mx-4 p-2 justify-center";
 
@@ -157,13 +158,15 @@ productsInCart.forEach(item => {
     });
     
      
+
     miniTitleEl.appendChild(cartControlsEl);
-    miniTitleEl.appendChild(miniNameEl);
-   
+    
     cartControlsEl.appendChild(removeButtonEl);
     cartControlsEl.appendChild(totalEl);
     cartControlsEl.appendChild(addButtonEl);
-   
+ 
+
+    miniTitleEl.appendChild(miniNameEl);
 
     // precio
     const priceEl = document.createElement("span");

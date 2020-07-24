@@ -125,16 +125,16 @@
     <div id="signUpForm" class="overlaytop">
         <a href="javascript:void(0)" class="closebtn" id="closeSignup"  >&times;</a>
         <div class="overlay-content">
-            <form class="mx-auto w-full max-w-lg">
+            <div class="mx-auto w-full max-w-lg"> 
                 <div class="flex flex-wrap -mx-3 mb-6">
                   <div class="max-w-sm md:w-1/2 px-3 mb-6 md:mb-0 items-center ">
-                    <label class="block uppercase item tracking-wide text-gray-700 text-xs font-bold mb-2"   for="grid-first-name">
+                    <label class="block uppercase item tracking-wide text-gray-700 text-xs font-bold mb-2"  for="fullName">
                       Full Name
                     </label>
-                    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="fullName" type="text" placeholder="John">
+                    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="fullName" type="text" placeholder="John" value="" autocomplete="off" >
                   </div>
                   <div class="max-w-sm md:w-1/2 px-3 ">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" id="email" for="grid-email">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"  for="email">
                       Email
                     </label>
                     <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" type="email" placeholder="Lennon@beatle.com">
@@ -142,21 +142,20 @@
                 </div>
                 <div class="flex flex-wrap -mx-3 mb-6 items-center">
                   <div class="max-w-lg px-3">
-                    <label  class=" uppercase tracking-normal text-gray-700 text-xs font-bold mb-2" for="grid-password">
+                    <label  class=" uppercase tracking-normal text-gray-700 text-xs font-bold mb-2" for="password">
                       Password                      
                     </label>
-                    <input id="signUpPassword" class="appearance-none block max-w-lg bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="password" type="password" placeholder="******************">                
+                    <input  class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="password" type="password" placeholder="******************">                
                   </div>       
                   <div class="max-w-lg px-3 items-center">
-                    <label class="block uppercase tracking-normal text-gray-700 text-xs font-bold mb-2" for="grid-password">
-                      Confirm Password
+                    <label class="block uppercase tracking-normal text-gray-700 text-xs font-bold mb-2" for="confirmPassword">
+                      Confirm Password       
                     </label>
                     <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="confirmPassword" type="password" placeholder="******************">   
                    <div>
-                      <label class="text-gray-500 font-bold">
-                        <input id="seePassword" class="invisible mr-2 leading-tight " type="checkbox">
-                        <svg  class="h-6 w-6 items-center" fill="none"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                    </label>
+              <!--      <span> <input id="seePassword" class="invisible mr-2 leading-tight " type="checkbox">
+                      <svg  class="h-6 w-6" fill="none"  stroke-linecap="round" stroke-linejoin="round"  viewBox="0 0 24 24" stroke="currentColor"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg></span>
+                -->      
                     </div> 
                                                          
                   </div>       
@@ -166,7 +165,7 @@
                   <div class="w-full">
                     <div class="md:flex md:items-center mb-6">     
                         <label class="md:w-1/2 block text-gray-500 font-bold">
-                          <input class="mr-2 leading-tight" type="checkbox">
+                          <input id="subscription"class="mr-2 leading-tight" type="checkbox">
                           <span class="text-sm">
                           Subscribe to our Newsletter!
                           </span>
@@ -177,7 +176,7 @@
                     </button>
                   </div>
                 </div>
-              </form>
+              </div>
         </div>
      </div>
 

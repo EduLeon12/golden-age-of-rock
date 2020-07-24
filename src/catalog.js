@@ -30,26 +30,17 @@ db.get().forEach(item => {
 
     
     const addButtonEl = document.createElement("button");
-    addButtonEl.className = "shadow bg-gray-600 items-center text-center text-base max-w-sm hover:bg-gray-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded "
-    addButtonEl.id = item.name 
+    addButtonEl.className = "shadow bg-gray-600 text-base w-1/2 ml-auto mr-auto items-center text-center hover:bg-gray-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded "
+    addButtonEl.id = item.id + "addCartbtn";
     addButtonEl.textContent = "Add to Cart"
     
-    
-   
     addButtonEl.addEventListener('click', () => {
         const newTotal = myShoppingCart.addOne(item.id);
         $("#nbmCartItems").html(function nbmitems(){
             const items = myShoppingCart.getTotalProducts();
             return items
         })
-
-        $("#Metallica").click(function(){
-            $("#Metallica").text = "Album added to Cart"
-        })
-
-        
-
-       
+    
     });
 
     titleEl.appendChild(nameEl);
