@@ -6,7 +6,7 @@ const catalogoEl = document.getElementById('catalogo');
 
 db.get().forEach(item => {
     const productoEl = document.createElement("div");
-    productoEl.className = "bg-gray-900 w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col ";
+    productoEl.className = "bg-gray-900  max-w-lg p-6 flex flex-col m-auto ";
     
     const audioEl = document.createElement('audio');
     const sourceEl = document.createElement('source');
@@ -31,8 +31,9 @@ db.get().forEach(item => {
     
     const addButtonEl = document.createElement("button");
     addButtonEl.className = "shadow bg-gray-600 text-base w-1/2 ml-auto mr-auto items-center text-center hover:bg-gray-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded "
-    addButtonEl.id = item.id + "addCartbtn";
+    addButtonEl.id = "addCartbtn";
     addButtonEl.textContent = "Add to Cart"
+
     
     addButtonEl.addEventListener('click', () => {
         const newTotal = myShoppingCart.addOne(item.id);
@@ -40,12 +41,14 @@ db.get().forEach(item => {
             const items = myShoppingCart.getTotalProducts();
             return items
         })
+       addButtonEl.innerHTML = "Album added to Cart";
+       addButtonEl.className = "shadow bg-gray-600 text-base  ml-auto mr-auto items-center text-center hover:bg-gray-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded w-auto ";
+   
     
     });
 
     titleEl.appendChild(nameEl);
     
-
     // precio
     const priceEl = document.createElement("span");
     priceEl.textContent = "$" + item.price.toFixed(2);

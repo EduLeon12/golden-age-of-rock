@@ -47,7 +47,7 @@ $("#confirmPurchase").click(function closeCheckout(){
 
 
 $("#createAccount").click(function createAcount() {
-   // document.getElementById("signUpForm").style.height = "0%";   
+   
         const fullName = $("#fullName").val();
         const email = $("#email").val();
         const password = $("#password").val();
@@ -65,16 +65,32 @@ $("#createAccount").click(function createAcount() {
                 passwordAcc: password,
                 isSubscribed: subscription
             }           
-            sessionStorage.setItem('account', JSON.stringify(accounData));   
+            localStorage.setItem('account', JSON.stringify(accounData));   
+            document.getElementById("signUpForm").style.height = "0%";  
+            document.getElementById("accCreationSucc").style.width = "100%";  
+            $("#nameofUser").html(accounData.nameAcc);   
+           
         } else {
-            $("#passwordMatch").removeClass("invisible");           
-    }
-  
+            $("#passwordMatch").removeClass("invisible");   
+    }    
+});
+/*
+const emailLogin = localStorage.account;
+
+
+
+
+if ($("#emailLogin") === emailLogin && $("#passLogin") === passwordLogin){
+    $("$logIntoAcc").click(() =>{
+      alert ("WELCOME BACK, " + fullnameLogin);
+    })
+}
+*/
+
+$("#gotoshopAccSuccess").click(function gotoShop() {  
+document.getElementById("accCreationSucc").style.width = "0%";  
 });
 
-$("#closeSignup").click(function closeSignUpForm() {
-    document.getElementById("signUpForm").style.height = "0%";
-});
 
 $("#closeCheckout").click(function closeCheckout() {
     document.getElementById("checkoutForm").style.height = "0%";
@@ -144,5 +160,11 @@ if(myShoppingCart.getTotalProducts() > 0 ){
     $("#miniCartText").addClass("invisible");
 }
 
+$('#addCartbtn').on('click', miniCartbuildup());
 
- 
+$("#emptyCartbtn").click(function emptycart(){
+    sessionStorage.clear("cart");
+    window.location.reload();
+  })
+  
+
