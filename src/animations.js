@@ -36,6 +36,10 @@ $("#signUpBtn").click(function openSignUpForm(){
     document.getElementById("signUpForm").style.height = "100%";
 });
 
+$("#closeSignup").click(function closeSignUp(){
+    document.getElementById("signUpForm").style.height = "0%";
+});
+
 $("#checkout").click(function openCheckout(){
     document.getElementById("myCart").style.width = "0%";
     document.getElementById("checkoutForm").style.height= "100%";
@@ -46,8 +50,7 @@ $("#confirmPurchase").click(function closeCheckout(){
 });
 
 
-$("#createAccount").click(function createAcount() {
-   
+$("#createAccount").click(function createAcount() { 
         const fullName = $("#fullName").val();
         const email = $("#email").val();
         const password = $("#password").val();
@@ -56,9 +59,8 @@ $("#createAccount").click(function createAcount() {
 
         if ($("#subscription").is(":checked")){
            const subscription = "true";
-        } 
-       
-         if (password === confirmPassword ){
+        }   
+         if (password === confirmPassword && fullName != "" && email != "" && password != "" && confirmPassword != "" ){
             const accounData = {
                 nameAcc: fullName,
                 emailAcc: email,
@@ -69,33 +71,41 @@ $("#createAccount").click(function createAcount() {
             document.getElementById("signUpForm").style.height = "0%";  
             document.getElementById("accCreationSucc").style.width = "100%";  
             $("#nameofUser").html(accounData.nameAcc);   
-           
+            $("#userName").removeClass("invisible");
+            $("#userName").html(accounData.nameAcc);           
         } else {
             $("#passwordMatch").removeClass("invisible");   
     }    
 });
-/*
-const emailLogin = localStorage.account;
 
-
-
-
-if ($("#emailLogin") === emailLogin && $("#passLogin") === passwordLogin){
-    $("$logIntoAcc").click(() =>{
-      alert ("WELCOME BACK, " + fullnameLogin);
-    })
-}
-*/
+$("#logIntoAcc").on("click", () =>{
+  let checkAcc = JSON.parse(localStorage.getItem("account"));
+  const emailLogAttempt = $("#emailLogin").val();
+  const passLogin = $("#passLogin").val();
+  const welcomeName = checkAcc.nameAcc;    
+  if (checkAcc === null || checkAcc.emailAcc !== emailLogAttempt ) {
+      ($("#loginUnsuc")).removeClass("invisible")
+  } else {
+      if (checkAcc.emailAcc === emailLogAttempt && checkAcc.passwordAcc !== passLogin ){
+        $("#loginUnsuc").removeClass("invisible")
+        $("#loginUnsuc").html("Incorrect password")
+      } else {       
+          if (checkAcc.emailAcc === emailLogAttempt && checkAcc.passwordAcc === passLogin ){ 
+        document.getElementById("login").style.width = "0%";
+        $("#userName").removeClass("invisible");
+        $("#userName").html(welcomeName);
+        }
+      } 
+  } 
+})
 
 $("#gotoshopAccSuccess").click(function gotoShop() {  
 document.getElementById("accCreationSucc").style.width = "0%";  
 });
 
-
 $("#closeCheckout").click(function closeCheckout() {
     document.getElementById("checkoutForm").style.height = "0%";
 });
-
 
 $("#seePassword").click(function showPassword(){
     if ($("#seePassword").is(":checked")){
@@ -113,7 +123,6 @@ $("#showTracks").click(function opentrackList(){
 $("#closeTracklist").click(function closeTop20List(){
     document.getElementById("tracks").style.width = "0%";
 });
-
 
 $("#searchBtn").hover(function searchIconColor(){
     $("#searchIcon").removeClass("text-gray-800").addClass("text-gray-600");
@@ -143,7 +152,6 @@ if (myShoppingCart.getTotalById() > 0) {
     const buttonid = 
     $("#addCartbtn").text("Album added to Cart");
 }
-
 
 if(myShoppingCart.getTotalProducts() > 0 ){
     $("#miniCarttotalprice").text( 

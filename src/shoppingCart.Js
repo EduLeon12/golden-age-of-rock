@@ -1,12 +1,10 @@
-
-
 // SHOPPING CART
 
 function ShoppingCart() {
     // { id: numero de discos en el carrito }
      let cart = JSON.parse(sessionStorage.getItem('cart'));
 
-    if (!cart) {
+    if (cart === null) {
         cart = {}
         sessionStorage.setItem('cart', JSON.stringify({}))
     }
@@ -99,11 +97,11 @@ function miniCartbuildup(){
     imageEl.className = "h-24 w-24 rounded-full content-start mx-12"
 
     const miniSummaryEl = document.createElement("div");
-    miniSummaryEl.classname = "content-center flex flex-wrap m-6";
+    miniSummaryEl.className = "content-center flex flex-wrap m-6";
 
     const miniTitleEl = document.createElement("span");
     miniTitleEl.textContent = item.title;
-    miniTitleEl.classname = "text-4x1 text-gray items-center justify-center mx-auto"
+    miniTitleEl.className = "text-4x1 text-gray items-center justify-center mx-auto"
 
    function totalprice(){
        let total = 0;
@@ -114,7 +112,7 @@ function miniCartbuildup(){
    }
       
    const miniCartControlsEl = document.createElement("span");
-   miniCartControlsEl.classname = " m-auto p-auto  flex flex-wrap";
+   miniCartControlsEl.className = " m-auto p-auto  flex flex-wrap";
    
    const addBtnEl = document.createElement("button")
    addBtnEl.innerHTML = `

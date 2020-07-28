@@ -1,7 +1,4 @@
-
-
 //Catalog
-
 const catalogoEl = document.getElementById('catalogo');
 
 db.get().forEach(item => {
@@ -19,21 +16,18 @@ db.get().forEach(item => {
     discEl.src = item.src;
     discEl.onmouseover = () => audioEl.play()
     discEl.onmouseout = () => audioEl.pause()
-    
-    
+        
     // title
     const titleEl = document.createElement("div");
     titleEl.className = "flex justify-between items-center py-2";
 
     const nameEl = document.createElement("span");
     nameEl.textContent = item.name;
-
-    
+  
     const addButtonEl = document.createElement("button");
     addButtonEl.className = "shadow bg-gray-600 text-base w-1/2 ml-auto mr-auto items-center text-center hover:bg-gray-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded "
     addButtonEl.id = "addCartbtn";
     addButtonEl.textContent = "Add to Cart"
-
     
     addButtonEl.addEventListener('click', () => {
         const newTotal = myShoppingCart.addOne(item.id);
@@ -42,9 +36,7 @@ db.get().forEach(item => {
             return items
         })
        addButtonEl.innerHTML = "Album added to Cart";
-       addButtonEl.className = "shadow bg-gray-600 text-base  ml-auto mr-auto items-center text-center hover:bg-gray-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded w-auto ";
-   
-    
+       addButtonEl.className = "shadow bg-gray-600 text-base  ml-auto mr-auto items-center text-center hover:bg-gray-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded w-auto ";    
     });
 
     titleEl.appendChild(nameEl);
