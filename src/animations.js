@@ -42,7 +42,7 @@ $("#closeSignup").click(function closeSignUp(){
 
 $("#checkout").click(function openCheckout(){
     document.getElementById("myCart").style.width = "0%";
-    document.getElementById("checkoutForm").style.height= "100%";
+    document.getElementById("checkoutForm").style.height= "10%";
 });
 
 $("#confirmPurchase").click(function closeCheckout(){
@@ -94,6 +94,7 @@ $("#logIntoAcc").on("click", () =>{
         document.getElementById("login").style.width = "0%";
         $("#userName").removeClass("invisible");
         $("#userName").html(welcomeName);
+        $("#loginUnsuc").addClass("invisible")
         }
       } 
   } 
@@ -153,26 +154,32 @@ if (myShoppingCart.getTotalById() > 0) {
     $("#addCartbtn").text("Album added to Cart");
 }
 
-if(myShoppingCart.getTotalProducts() > 0 ){
-    $("#miniCarttotalprice").text( 
-        function totalprice(){
-        const price = myShoppingCart.getTotalAmount();
-        return price
-    })
-    $("#checkout").removeClass("invisible");
-    $("#miniCarttotalprice").removeClass("invisible");
-    $("#totaltext").removeClass("invisible");
-    $("#dolarSign").removeClass("invisible");
-    $("#emptyCartbtn").removeClass("invisible");
-    $("#emptyCart").addClass("invisible");
-    $("#miniCartText").addClass("invisible");
-}
 
-$('#addCartbtn').on('click', miniCartbuildup());
+
 
 $("#emptyCartbtn").click(function emptycart(){
     sessionStorage.clear("cart");
     window.location.reload();
   })
-  
+
+
+$(document).ready(function load(){ 
+    if ( myShoppingCart.getTotalProducts() > 0){
+        $("#checkout").removeClass("invisible");
+        $("#miniCarttotalprice").removeClass("invisible");
+        $("#totaltext").removeClass("invisible");
+        $("#dolarSign").removeClass("invisible");
+        $("#emptyCartbtn").removeClass("invisible");
+        $("#emptyCart").addClass("invisible");
+        $("#miniCartText").addClass("invisible");
+        $("#miniCarttotalprice").text( 
+            function totalprice(){
+            const price = myShoppingCart.getTotalAmount();
+            return price
+            })    
+    }
+})  
+
+
+
 
