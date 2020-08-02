@@ -1,7 +1,4 @@
-/*
- * Music app
- *
- */
+// Deezer API
 const searchForm = document.querySelector('#search-form');
 const searchResultEL = document.querySelector('#search-result-wrapper');
 const tracksEl = document.querySelector('#search-tracks');
@@ -16,27 +13,21 @@ const getData = async url => {
 			'x-rapidapi-key': '5860b531a7msh3bd92ef36bbb87ep17062bjsneba0c800c401'
 		}
 	});
-
 	if (!response.ok) {
 		throw new Error('Response was not ok.');
 	}
-
-	return await response.json();
-	 
+	return await response.json(); 
 };
-
 
 // Get search results for tracks
 const searchTracks = async search => {
 	const tracks = await getData(
 		`https://deezerdevs-deezer.p.rapidapi.com/search/track?q=${search}&limit=5`
 	);
-
 	if (tracks.error) {
 		throw new Error('Could not fetch tracks.');
 	}
 	return tracks;
-	
 };
 
 // Collect search results for tracks, limited to 5 items 
@@ -45,7 +36,6 @@ const searchAll = async search => {
 		tracks: await searchTracks(`${search}&limit=5`)
 	};
 };
-
 
 // Add search value to data-attribute
 const saveSearch = search => {
@@ -77,8 +67,6 @@ const renderTrackResult = track => {
 			</div>
 		</li>`;
 };
-
-
 // Clear HTML elements
 const clearInfo = element => {
 	const elements = document.querySelectorAll(element);
@@ -87,7 +75,6 @@ const clearInfo = element => {
 		if (el.tagName === 'IMG') el.src = '';
 	});
 };
-
 // Add 'display none' to all section elements
 const hideElements = () => {
 	console.log('applying d-none to sections');
@@ -95,7 +82,6 @@ const hideElements = () => {
 		.querySelectorAll('section')
 		.forEach(section => section.classList.add('d-none'));
 };
-
 const handleSearchResults = searchResults => {
 	const { tracks = false } = searchResults;
 
@@ -107,9 +93,6 @@ const handleSearchResults = searchResults => {
 	}
 
 };
-
-
-
 searchForm.addEventListener('submit', e => {
 	// Prevent default action
 	e.preventDefault();
@@ -127,7 +110,6 @@ searchForm.addEventListener('submit', e => {
 		.then(handleSearchResults)
 
 });
-
 document.querySelector('#tracks').addEventListener('click', async e => {
 	// Prevent default action
 	e.preventDefault();

@@ -1,6 +1,5 @@
 //Catalog
 const catalogoEl = document.getElementById('catalogo');
-
 db.get().forEach(item => {
     const productoEl = document.createElement("div");
     productoEl.className = "bg-gray-900  max-w-lg p-6 flex flex-col m-auto ";
@@ -49,9 +48,8 @@ db.get().forEach(item => {
         $("#emptyCartbtn").removeClass("invisible");
         $("#emptyCart").addClass("invisible");
         $("#miniCartText").addClass("invisible");
-        miniCartbuildup();
+       miniCartbuildup()
     });
-
     titleEl.appendChild(nameEl);
     
     // precio
@@ -64,6 +62,5 @@ db.get().forEach(item => {
     productoEl.appendChild(addButtonEl);
     audioEl.appendChild(sourceEl);
     catalogoEl.appendChild(productoEl);
-
 })
   

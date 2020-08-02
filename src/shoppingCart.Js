@@ -1,44 +1,32 @@
 // SHOPPING CART
-
 function ShoppingCart() {
     // { id: numero de discos en el carrito }
      let cart = JSON.parse(sessionStorage.getItem('cart'));
-
-    if (cart === null) {
+     if (cart === null) {
         cart = {}
         sessionStorage.setItem('cart', JSON.stringify({}))
     }
-
     this.addOne = function(id) {
         if (cart[id])
             cart[id] += 1;
         else 
             cart[id] = 1;
-
         sessionStorage.setItem('cart', JSON.stringify(cart))
-      //  console.log("Producto con id:", id, ". Tienes un total de: ", cart[id], "de estos productos en el carrito");
-      //  console.log("Total: $", this.getTotalAmount())
         return cart[id];
     }
-
     this.removeOne = function(id) {
         if (cart[id] && cart[id] >= 1) {
             cart[id] -= 1;
             sessionStorage.setItem('cart', JSON.stringify(cart))
-         //   console.log("Producto con id:", id, "removido del carrito con un total de", cart[id], "restantes de este producto");
-           // console.log("Total: $", this.getTotalAmount())
         }
         return cart[id];
     }   
-
     this.get = function(){
         return cart;
     }
-
     this.getTotalById = function(id) {
         return cart[id] || 0
     }
-
     this.getTotalAmount = function(){
         let total = 0;
         Object.keys(cart).forEach(productId => {
@@ -53,28 +41,20 @@ function ShoppingCart() {
         Object.keys(cart).forEach(productId => {
             total += cart[productId]
         })  
-        return total; 
-      
+        return total;      
     }   
 }
-
 function Product(id, name, price) {
     this.id = id;
     this.name = name;
     this.price = price;
 }
-
 var myShoppingCart = new ShoppingCart();
 
-
-
 //MiniCart
- 
-const shoppinCartEl = document.getElementById('miniCart');
-
-function miniCartbuildup(){
-    const productsInCart = []
-    
+ const shoppinCartEl = document.getElementById('miniCart');
+ function miniCartbuildup(){
+    const productsInCart = []   
      for (const productId in myShoppingCart.get())
      {
      if (myShoppingCart.get() [productId] > 0 )
@@ -85,12 +65,8 @@ function miniCartbuildup(){
         image: db.getById(productId).src,
         price: db.getById(productId).price,
       })
-  
-    
-    console.log(productsInCart)
-    productsInCart.forEach(item =>{
-
-    const itemEl = document.createElement("div");
+    productsInCart.forEach(item =>{     
+    const itemEl  = document.createElement("div");
     itemEl.className = "container content-center flex flex-wrap p-6 mx-auto";
 
     const imageEl = document.createElement("img");
@@ -110,8 +86,7 @@ function miniCartbuildup(){
        const quantity = item.quantity;
        total = price*quantity;
        return total
-   }
-      
+   }  
    const miniCartControlsEl = document.createElement("span");
    miniCartControlsEl.className = " m-auto p-auto  flex flex-wrap";
    
@@ -135,77 +110,28 @@ function miniCartbuildup(){
      
        // })
        
-       const minipriceEl = document.createElement("span");
-       minipriceEl.textContent =  "Total: $ " + totalprice();
-       minipriceEl.className = "text-2x1 text-gray m-4 ml-12";
+   const minipriceEl = document.createElement("span");
+   minipriceEl.textContent =  "Total: $ " + totalprice();
+   minipriceEl.className = "text-2x1 text-gray m-4 ml-12";
        
-       addBtnEl.addEventListener("click", () =>{
-           const newTotal = (item.quantity + 1);
-           productsInCart.quantity = newTotal; 
-           totalEl.textContent = productsInCart.quantity;
-           return newTotal
-         })
+   addBtnEl.addEventListener("click", () =>{
+     const newTotal = (item.quantity + 1);
+     productsInCart.quantity = newTotal; 
+     totalEl.textContent = productsInCart.quantity;
+     return newTotal
+   })
 
-       shoppinCartEl.appendChild(itemEl);    
-       itemEl.appendChild(imageEl);
-       itemEl.appendChild(miniSummaryEl);
+   shoppinCartEl.appendChild(itemEl);    
+   itemEl.appendChild(imageEl);
+   itemEl.appendChild(miniSummaryEl);
        
-       miniSummaryEl.appendChild(miniTitleEl);
-       miniSummaryEl.appendChild(miniCartControlsEl);
+   miniSummaryEl.appendChild(miniTitleEl);
+   miniSummaryEl.appendChild(miniCartControlsEl);
        
-       miniCartControlsEl.appendChild(removeBtnEl);
-       miniCartControlsEl.appendChild(totalEl);
-       miniCartControlsEl.appendChild(addBtnEl);
-       miniSummaryEl.appendChild(minipriceEl);
-     
+   miniCartControlsEl.appendChild(removeBtnEl);
+   miniCartControlsEl.appendChild(totalEl);
+   miniCartControlsEl.appendChild(addBtnEl);
+   miniSummaryEl.appendChild(minipriceEl);     
     })   
- }
+  }
 }
-
-
-/*
-function buildminiCart (){
-    const shoppinCartEl = document.getElementById('miniCart');
-    const productsInCart = []
-    for (const productId in myShoppingCart.get())   
-    if (myShoppingCart.get() [productId] > 0 )
-       productsInCart.push(
-     {
-       product: db.getById(productId),
-       quantity: myShoppingCart.get()[productId],
-       title: db.getById(productId).name,
-       image: db.getById(productId).src,
-       price: db.getById(productId).price,
-     })
-   productsInCart.forEach(item => {   
-     return `
-    <div class="container content-center flex flex-wrap p-6 mx-auto">
-     <div>
-       <img src:"${productsInCart.image}" class="h-24 w-24 rounded-full content-start mx-12" alt="miniDisc">
-         <span class="text-4x1 text-gray items-center justify-center mx-auto>
-         ${productsInCart.title} 
-         </span>
-     </div>  
-     <div>
-        <button> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="fill-current  mx-6 my-2 py-auto text-yellow-900 " >
-        <path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1
-        1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/>
-        </svg> 
-        </button>
-        <span class="text-4x1 text-gray items-center justify-center mx-auto">
-         ${productsInCart.quantity} </span>
-        <button> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="fill-current text-red-900 mx-6 my-2 py-auto" style="transform: rotate(45deg);">
-        <path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/>
-        </svg>
-        </button>
-     </div>
-     <div>
-       <span class="text-2x1 text-gray">  ${productsInCart.price} </span>
-     </div>
-    </div>
-    `
- })
-
-}
-*/
-
